@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom'
 import BuyHomepage from './components/BuyHomepage.js'
 import CreateAListing from './components/CreateAListing.js'
+import Login from './components/Login.js'
 
 class App extends Component {
   render() {
@@ -12,6 +13,8 @@ class App extends Component {
        Hi guys!
        <Route path='/BuyHomepage' exact='false' render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact='true' render={ () => <CreateAListing /> } />
+       <Route path='/Login' exact='true' render={ () => <Login /> } />
+
       </div>
       </BrowserRouter>
     );
