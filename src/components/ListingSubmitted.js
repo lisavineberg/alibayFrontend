@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 import BuyHomepage from './BuyHomepage';
 
+/*This page is shown once the listing has been submitted. It gives the user two options, show the listing
+(it achieves this by using the itemID that has been passed as props from the CreateAListing component),
+or show all the items available for sale (creating an instance of the BuyHomepage) */
+
 class Item extends Component {}
 
 class ListingSubmittedBasic extends Component {
     constructor() {
         super()
         this.state = {
-            itemID: '',
+            //receives the itemID from the CreateAListing component
+            itemID: this.props.itemID,
             receivedItem: {}
         }
         this.renderItem = this.renderItem.bind(this)

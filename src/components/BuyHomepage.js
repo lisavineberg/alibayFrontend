@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import DisplayItems from './DisplayItems.js'
 
-/*the class declaration below is just to allow the page to run properly until the actual class
-gets created */
-class DisplayItems extends Component {}
+/*this page has a search bar and a button to display items for sale. It makes a request
+to the backend for the items of interest, stores those in the state, and then makes an 
+instance of the class "displayItems" with the items of interest passed as props*/
 
 class BuyHomepageBasic extends Component {
     constructor(){

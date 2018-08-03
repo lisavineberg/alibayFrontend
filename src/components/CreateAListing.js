@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 import ListingSubmitted from './ListingSubmitted.js'
 
+/*this page creates a listing. It sends the information about the item to be stored in the
+backend. Upon submitting the form, the url is changed, and on changing the url, the listingSubmitted
+component is rendered. The itemID is passed to the listingSubmitted component, in case it needs
+to render the individual listing */
+
 //creating things for functionality of this individual component
 let userID = 1212
 
@@ -15,7 +20,8 @@ class CreateAListingBasic extends Component {
             inputItemPrice: '',
             itemName: '',
             itemDesc: '',
-            itemPrice: ''
+            itemPrice: '',
+            itemID: ''
         }
         this.handleItemNameChange = this.handleItemNameChange.bind(this)
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
@@ -41,7 +47,8 @@ class CreateAListingBasic extends Component {
         this.setState({
             itemName: this.state.inputItemName,
             itemDesc: this.state.inputItemDesc,
-            itemPrice: this.state.inputItemPrice
+            itemPrice: this.state.inputItemPrice,
+            itemID: Math.floor(Math.random()*100)
         })
 
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
@@ -52,7 +59,7 @@ class CreateAListingBasic extends Component {
             itemDesc: this.state.itemDesc, 
             itemPrice: this.state.inputItemPrice, 
             sellerID: userID,
-            itemID: Math.floor(Math.random()*100)
+            itemID: this.state.itemID
         }
         fetch('/sellItem', {
             method: 'POST',
@@ -66,8 +73,11 @@ class CreateAListingBasic extends Component {
     }
 
     displayListingSubmitted() {
-        return (<ListingSubmitted />)
+        /* pass the itemID here as a props. Then, the listingSubmitted page would have the 
+        itemID, so that it could display that listing as necessary */
+        return (<ListingSubmitted itemID={this.state.itemID} />)
     }
+
     render() {
         return (
             <div>
