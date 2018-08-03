@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import ListingSubmitted from './components/ListingSubmitted.js'
 
 //creating things for functionality of this individual component
 let userID = 1212
-class ListingSubmitted extends Component {}
+
 
 class CreateAListingBasic extends Component {
     constructor() {
@@ -45,22 +46,26 @@ class CreateAListingBasic extends Component {
 
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
         the item to send it to the backend. Also, userID will need to have been sent as a props
-        from... somewhere */
+        from... somewhere. The item id will be generate here? */
         let itemToSend = {
-            itemName: this.state.itemName, itemDesc: this.state.itemDesc, itemPrice: this.state.inputItemPrice, sellerID: userID
+            itemName: this.state.itemName, 
+            itemDesc: this.state.itemDesc, 
+            itemPrice: this.state.inputItemPrice, 
+            sellerID: userID,
+            itemID: Math.floor(Math.random()*100)
         }
         fetch('/sellItem', {
             method: 'POST',
             body: itemToSend
         }).then(response => response.text())
-        .then(
-            /* is there a failure response? I think we assume all sales are registered. Once the listing
-            has been submitted, go to the listingSubmitted page */
-            this.props.history.push('/listingSubmitted')
-        )
+            .then(
+                /* is there a failure response? I think we assume all sales are registered. Once the listing
+                has been submitted, go to the listingSubmitted page */
+                this.props.history.push('/listingSubmitted')
+            )
     }
 
-    displayListingSubmitted(){
+    displayListingSubmitted() {
         return (<ListingSubmitted />)
     }
     render() {
@@ -69,15 +74,21 @@ class CreateAListingBasic extends Component {
                 Create a listing for your item!
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        Name your listing:
+                        <div>
+                            Name your listing:
                     <input type='text' value={this.state.inputItemName} placeholder='Item name' onChange={this.handleItemNameChange} />
-                        Describe it:
+                        </div>
+                        <div>
+                            Describe it:
                     <input type='text' value={this.state.inputItemDesc} placeholder='Item description' onChange={this.handleItemDescChange} />
-                        How much would you like to sell it for?
+                        </div>
+                        <div>
+                            How much would you like to sell it for?
                     <input type='text' value={this.state.inputItemPrice} placeholder='Item price' onChange={this.handleItemPriceChange} />
+                        </div>
                     </form>
                 </div>
-                <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted}/>
+                <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />
             </div>
         )
     }
