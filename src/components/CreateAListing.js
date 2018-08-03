@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import ListingSubmitted from './ListingSubmitted.js'
 
 /*this page creates a listing. It sends the information about the item to be stored in the
@@ -82,6 +82,10 @@ class CreateAListingBasic extends Component {
     render() {
         return (
             <div>
+            <div>
+            <Link to='/Homepage'>Link to homepage</Link>
+            </div>
+            <div>
                 Create a listing for your item!
                 <div>
                     <form onSubmit={this.handleSubmit}>
@@ -103,6 +107,7 @@ class CreateAListingBasic extends Component {
                     </form>
                 </div>
                 <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />
+            </div>
             </div>
         )
     }

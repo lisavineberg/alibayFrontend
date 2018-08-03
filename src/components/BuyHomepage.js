@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import DisplayItems from './DisplayItems.js'
 
 /*this page has a search bar and a button to display items for sale. It makes a request
@@ -77,7 +77,9 @@ class BuyHomepageBasic extends Component {
         return (
             //Browser router goes in app.js
             <div>
-            
+            <div>
+            <Link to='/Homepage'>Link to homepage</Link>
+            </div>
             <button onClick={this.displayAllItemsForSale}>See all items for sale</button>
 
             <div>

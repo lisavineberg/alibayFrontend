@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import BuyHomepage from './BuyHomepage';
 
 /*This page is shown once the listing has been submitted. It gives the user two options, show the listing
@@ -44,10 +44,15 @@ class ListingSubmittedBasic extends Component {
     render() {
         return (
             <div>
+            <div>
+            <Link to='/Homepage'>Link to homepage</Link>
+            </div>
+            <div>
                 Would you like to
                 <button onClick={this.renderItem}> see my listing </button>
                 <button onClick={this.renderBuyHomepage}> see what's for sale </button>
                 <Route path='/item' render={this.displayItem} />
+            </div>
             </div>
         )
     }
