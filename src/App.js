@@ -12,7 +12,7 @@ class App extends Component {
       <BrowserRouter>
       <div className="App">
        Hi guys!
-       {/* <Route path='/Signup' exact={true} render={ () => <SignUp /> } /> */}
+       <Route path='/Signup' exact={true} render={ () => <SignUp /> } />
        <Route path='/BuyHomepage' exact={false} render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact={false} render={ () => <CreateAListing /> } />
        <Route path='/Login' exact={true} render={ () => <Login /> } />
