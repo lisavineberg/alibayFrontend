@@ -5,7 +5,8 @@ import BuyHomepage from './components/BuyHomepage.js'
 import CreateAListing from './components/CreateAListing.js'
 import Login from './components/Login.js'
 import SignUp from './components/SignUp.js'
-import ListingSubmitted from './components/ListingSubmitted';
+import ListingSubmitted from './components/ListingSubmitted'
+import Homepage from './components/Homepage'
 
 class App extends Component {
   constructor(props){
@@ -30,7 +31,8 @@ class App extends Component {
        <Route path='/BuyHomepage' exact={false} render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact={false} render={ this.renderCreateAListing } />
        <Route path='/Login' exact={true} render={ () => <Login /> } />
-       <Route path='/ListingSubmitted' exact={true} render={ () => <ListingSubmitted />} />
+       <Route path='/ListingSubmitted' exact={true} render={ () => <ListingSubmitted /> } />
+       <Route path='/Homepage' exact={true} render={ () => <Homepage /> } />
 
       </div>
       </BrowserRouter>
