@@ -14,6 +14,7 @@ class App extends Component {
        <Route path='/BuyHomepage' exact='false' render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact='true' render={ () => <CreateAListing /> } />
        <Route path='/Login' exact='true' render={ () => <Login /> } />
+       <Route path='/Signup' exact='true' render={ () => <SignUp /> } />
 
       </div>
       </BrowserRouter>
