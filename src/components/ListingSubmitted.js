@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 import BuyHomepage from './BuyHomepage';
 
-class displayItem extends Component {}
+class Item extends Component {}
 
 class ListingSubmittedBasic extends Component {
     constructor() {

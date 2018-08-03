@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
-import ListingSubmitted from './components/ListingSubmitted.js'
+import ListingSubmitted from './ListingSubmitted.js'
 
 //creating things for functionality of this individual component
 let userID = 1212
@@ -86,6 +86,9 @@ class CreateAListingBasic extends Component {
                             How much would you like to sell it for?
                     <input type='text' value={this.state.inputItemPrice} placeholder='Item price' onChange={this.handleItemPriceChange} />
                         </div>
+                        <div>
+                            <input type='submit' />
+                            </div>
                     </form>
                 </div>
                 <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />

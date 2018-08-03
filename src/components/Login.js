@@ -26,8 +26,6 @@ class Login extends Component {
         this.setState({inputPasswordValue: event.target.value})
     }
 
-
-
     render(){
         return(
             <div>
