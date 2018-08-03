@@ -15,7 +15,9 @@ class ListingSubmittedBasic extends Component {
         this.state = {
             //receives the itemID from the CreateAListing component
             // itemID: this.props.itemID,
+            // usedID: this.props.userID
             receivedItem: {}
+            
         }
         this.renderItem = this.renderItem.bind(this)
         this.renderBuyHomepage = this.renderBuyHomepage.bind(this)

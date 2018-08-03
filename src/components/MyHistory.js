@@ -7,6 +7,9 @@ import { Link, Route, withRouter } from 'react-router-dom'
 class MyHistory extends Component {
     constructor() {
         super()
+        this.state = {
+            userID: this.props.userID
+        }
     }
 
     render() {

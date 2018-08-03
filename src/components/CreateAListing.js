@@ -22,6 +22,7 @@ class CreateAListingBasic extends Component {
             itemDesc: '',
             itemPrice: '',
             itemID: ''
+            // , userID: this.props.userID
         }
         this.handleItemNameChange = this.handleItemNameChange.bind(this)
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
@@ -76,7 +77,7 @@ class CreateAListingBasic extends Component {
     displayListingSubmitted() {
         /* pass the itemID here as a props. Then, the listingSubmitted page would have the 
         itemID, so that it could display that listing as necessary */
-        return (<ListingSubmitted itemID={this.state.itemID} />)
+        return (<ListingSubmitted itemID={this.state.itemID} /*userID={this.state.userID*//>)
     }
 
     render() {
