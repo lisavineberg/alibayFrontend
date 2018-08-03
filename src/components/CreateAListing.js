@@ -48,16 +48,16 @@ class CreateAListingBasic extends Component {
             itemName: this.state.inputItemName,
             itemDesc: this.state.inputItemDesc,
             itemPrice: this.state.inputItemPrice,
-            itemID: Math.floor(Math.random()*100)
+            itemID: Math.floor(Math.random() * 100)
         })
 
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
         the item to send it to the backend. Also, userID will need to have been sent as a props
         from... somewhere. The item id will be generate here? */
         let itemToSend = {
-            itemName: this.state.itemName, 
-            itemDesc: this.state.itemDesc, 
-            itemPrice: this.state.inputItemPrice, 
+            itemName: this.state.itemName,
+            itemDesc: this.state.itemDesc,
+            itemPrice: this.state.inputItemPrice,
             //userID below will come as a props from the App.js
             sellerID: userID,
             itemID: this.state.itemID
@@ -82,32 +82,32 @@ class CreateAListingBasic extends Component {
     render() {
         return (
             <div>
-            <div>
-            <Link to='/Homepage'>Link to homepage</Link>
-            </div>
-            <div>
-                Create a listing for your item!
                 <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <div>
-                            Name your listing:
-                    <input type='text' value={this.state.inputItemName} placeholder='Item name' onChange={this.handleItemNameChange} />
-                        </div>
-                        <div>
-                            Describe it:
-                    <input type='text' value={this.state.inputItemDesc} placeholder='Item description' onChange={this.handleItemDescChange} />
-                        </div>
-                        <div>
-                            How much would you like to sell it for?
-                    <input type='text' value={this.state.inputItemPrice} placeholder='Item price' onChange={this.handleItemPriceChange} />
-                        </div>
-                        <div>
-                            <input type='submit' />
-                            </div>
-                    </form>
+                    <Link to='/Homepage'>Link to homepage</Link>
                 </div>
-                <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />
-            </div>
+                <div>
+                    Create a listing for your item!
+                <div>
+                        <form onSubmit={this.handleSubmit}>
+                            <div>
+                                Name your listing:
+                    <input type='text' value={this.state.inputItemName} placeholder='Item name' onChange={this.handleItemNameChange} />
+                            </div>
+                            <div>
+                                Describe it:
+                    <input type='text' value={this.state.inputItemDesc} placeholder='Item description' onChange={this.handleItemDescChange} />
+                            </div>
+                            <div>
+                                How much would you like to sell it for?
+                    <input type='text' value={this.state.inputItemPrice} placeholder='Item price' onChange={this.handleItemPriceChange} />
+                            </div>
+                            <div>
+                                <input type='submit' />
+                            </div>
+                        </form>
+                    </div>
+                    <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />
+                </div>
             </div>
         )
     }

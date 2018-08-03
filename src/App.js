@@ -9,7 +9,7 @@ import ListingSubmitted from './components/ListingSubmitted'
 import Homepage from './components/Homepage'
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       //userID would be set on Login
@@ -21,45 +21,45 @@ class App extends Component {
     this.renderSignUp = this.renderSignUp.bind(this)
     this.renderLogin = this.renderLogin.bind(this)
     this.renderHomepage = this.renderHomepage.bind(this)
-    
+
   }
 
-  renderCreateAListing(){
+  renderCreateAListing() {
     return (<CreateAListing userID={this.state.userID} />)
   }
 
-  renderBuyHomepage(){
+  renderBuyHomepage() {
     return (<BuyHomepage userID={this.state.usedID} />)
   }
 
-  renderListingSubmitted(){
+  renderListingSubmitted() {
     return (<ListingSubmitted userID={this.state.usedID} />)
   }
 
-  renderSignUp(){
+  renderSignUp() {
     return (<SignUp />)
   }
 
-  renderLogin(){
+  renderLogin() {
     return (<Login />)
   }
 
-  renderHomepage(){
+  renderHomepage() {
     return (<Homepage />)
   }
 
   render() {
     return (
       <BrowserRouter>
-      <div className="App">
-       <Route path='/SignUp' exact={true} render={ this.renderSignUp } />
-       <Route path='/BuyHomepage' exact={false} render={ this.renderBuyHomepage } />
-       <Route path='/CreateAListing' exact={false} render={ this.renderCreateAListing } />
-       <Route path='/Login' exact={true} render={ this.renderLogin } />
-       <Route path='/ListingSubmitted' exact={true} render={ this.renderListingSubmitted } />
-       <Route path='/Homepage' exact={true} render={ this.renderHomepage} />
+        <div className="App">
+          <Route path='/SignUp' exact={true} render={this.renderSignUp} />
+          <Route path='/BuyHomepage' exact={false} render={this.renderBuyHomepage} />
+          <Route path='/CreateAListing' exact={false} render={this.renderCreateAListing} />
+          <Route path='/Login' exact={true} render={this.renderLogin} />
+          <Route path='/ListingSubmitted' exact={true} render={this.renderListingSubmitted} />
+          <Route path='/Homepage' exact={true} render={this.renderHomepage} />
 
-      </div>
+        </div>
       </BrowserRouter>
     );
   }

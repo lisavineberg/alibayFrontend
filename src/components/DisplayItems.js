@@ -5,21 +5,21 @@ import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 items for sale). The itemsto be displayed have been sent as props. */
 
 class DisplayItemsBasic extends Component {
-    constructor(){
+    constructor() {
         super()
         //can I do this? \/
-        this.state = {items: this.props.items}
+        this.state = { items: this.props.items }
         this.displayItems = this.displayItems.bind(this)
     }
 
-    displayItems(){
-        this.state.items.map( item => {
+    displayItems() {
+        this.state.items.map(item => {
             return (
                 <div>
                     For sale! {item.itemName}
                     Description: {item.description}
                     Price: {item.price}
-                    </div>
+                </div>
             )
         })
 
@@ -29,7 +29,7 @@ class DisplayItemsBasic extends Component {
         return (
             <div>
                 {this.displayItems}
-                </div>
+            </div>
         )
     }
 
