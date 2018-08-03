@@ -20,6 +20,7 @@ class CreateAListingBasic extends Component {
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
         this.handleItemPriceChange = this.handleItemPriceChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.displayListingSubmitted = this.displayListingSubmitted.bind(this)
     }
 
     handleItemNameChange(event) {
@@ -68,15 +69,15 @@ class CreateAListingBasic extends Component {
                 Create a listing for your item!
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        Item name:
-                    <input type='text' value={this.state.inputItemName} onChange={this.handleItemNameChange} />
-                        Item description:
-                    <input type='text' value={this.state.inputItemDesc} onChange={this.handleItemDescChange} />
-                        Price:
-                    <input type='text' value={this.state.inputItemPrice} onChange={this.handleItemPriceChange} />
+                        Name your listing:
+                    <input type='text' value={this.state.inputItemName} placeholder='Item name' onChange={this.handleItemNameChange} />
+                        Describe it:
+                    <input type='text' value={this.state.inputItemDesc} placeholder='Item description' onChange={this.handleItemDescChange} />
+                        How much would you like to sell it for?
+                    <input type='text' value={this.state.inputItemPrice} placeholder='Item price' onChange={this.handleItemPriceChange} />
                     </form>
                 </div>
-                <Route to='/listingSubmitted' render={this.displayListingSubmitted}/>
+                <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted}/>
             </div>
         )
     }
