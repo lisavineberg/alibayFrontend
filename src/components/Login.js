@@ -21,6 +21,7 @@ class Login extends Component {
         // send response to app.js and set state
         // add if/else incase password is incorrect
         // last line will be path to homepage .history
+        // this.props.onLogin(user) [we are passing information up to app.js] it's sending the 'user' data back up to app.js
     }
     
     handleUsernameChange = event => {

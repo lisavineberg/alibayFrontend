@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
-import BuyHomepage from './BuyHomepage';
+import { Link, Route, withRouter } from 'react-router-dom'
+//import BuyHomepage from './BuyHomepage'; // don't need this cause we pushed the url instead
 
 /*This page is shown once the listing has been submitted. It gives the user two options, show the listing
 (it achieves this by using the itemID that has been passed as props from the CreateAListing component),
 or show all the items available for sale (creating an instance of the BuyHomepage) */
 
-class Item extends Component {}
+
+class Item extends Component { }
 
 class ListingSubmittedBasic extends Component {
     constructor() {
         super()
         this.state = {
             //receives the itemID from the CreateAListing component
-            itemID: this.props.itemID,
+            // itemID: this.props.itemID,
+            // usedID: this.props.userID
             receivedItem: {}
+            
         }
         this.renderItem = this.renderItem.bind(this)
         this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
@@ -26,16 +29,16 @@ class ListingSubmittedBasic extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let receivedItem = JSON.parse(responseBody)
-                this.setState({ receivedItem: receivedItem})
+                this.setState({ receivedItem: receivedItem })
                 this.props.history.push('/item')
-        })
+            })
     }
 
     renderBuyHomepage() {
-        return (<BuyHomepage />)
+        this.props.history.push('/BuyHomepage')
     }
 
-    displayItem(){
+    displayItem() {
         let item = this.state.receivedItem
         return (<Item item={item} />)
     }
@@ -43,10 +46,15 @@ class ListingSubmittedBasic extends Component {
     render() {
         return (
             <div>
-                Would you like to
+                <div>
+                    <Link to='/Homepage'>Link to homepage</Link>
+                </div>
+                <div>
+                    Would you like to
                 <button onClick={this.renderItem}> see my listing </button>
-                <button onClick={this.renderBuyHomepage}> see what's for sale </button>
-                <Route path='/item' render={this.displayItem} />
+                    <button onClick={this.renderBuyHomepage}> see what's for sale </button>
+                    <Route path='/item' render={this.displayItem} />
+                </div>
             </div>
         )
     }

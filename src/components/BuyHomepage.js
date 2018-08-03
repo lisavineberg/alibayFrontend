@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom'
 import DisplayItems from './DisplayItems.js'
 
 /*this page has a search bar and a button to display items for sale. It makes a request
@@ -7,13 +7,14 @@ to the backend for the items of interest, stores those in the state, and then ma
 instance of the class "displayItems" with the items of interest passed as props*/
 
 class BuyHomepageBasic extends Component {
-    constructor(){
+    constructor() {
         super()
-        this.state={
-            inputSearch:'',
-            search:'',
-            /* would items be an array or an object?*/ 
+        this.state = {
+            inputSearch: '',
+            search: '',
+            /* would items be an array or an object?*/
             items: []
+            // , userID: this.props.userID
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,11 +23,11 @@ class BuyHomepageBasic extends Component {
     }
 
     //handles the input of the search bar
-    handleChange(event){
+    handleChange(event) {
         this.setState({ inputSearch: event.target.value })
     }
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault()
         //submits the search request, clears the search bar
         this.setState({ search: this.state.inputSearch, inputSearch: '' })
@@ -36,61 +37,63 @@ class BuyHomepageBasic extends Component {
         the phrase in the search query, or returns a fail
         */
         fetch('/searchItemForSale?search=' + this.state.search)
-        .then(response => response.text())
-        .then(responseBody => {
-            let parsedBody = JSON.parse(responseBody)
-            if (parsedBody === 'failure'){
-                return (<div> No items found </div>)
-            } else {
-                let receivedItems = parsedBody.items
-                this.setState({ items: receivedItems })
-                this.props.history.push('/BuyHomepage/displaySearchResults')
-            }
-        })
+            .then(response => response.text())
+            .then(responseBody => {
+                let parsedBody = JSON.parse(responseBody)
+                if (parsedBody === 'failure') {
+                    return (<div> No items found </div>)
+                } else {
+                    let receivedItems = parsedBody.items
+                    this.setState({ items: receivedItems })
+                    this.props.history.push('/BuyHomepage/displaySearchResults')
+                }
+            })
     }
 
     /*sends a get request to ther server for all items for sale (no buyerID)*/
-    displayAllItemsForSale(){
+    displayAllItemsForSale() {
         fetch('/getAllItemsForSale')
-        .then(response => response.text())
-        .then(responseBody => {
-            let parsedBody = JSON.parse(responseBody)
-            if (parsedBody === 'failure'){
-                return (<div> No items for sale </div>)
-            } else {
-                let receivedItems = parsedBody.items
-                this.setState({ items: receivedItems })
-                this.props.history.push('/BuyHomepage/displaySearchResults')
-            }
-        })
+            .then(response => response.text())
+            .then(responseBody => {
+                let parsedBody = JSON.parse(responseBody)
+                if (parsedBody === 'failure') {
+                    return (<div> No items for sale </div>)
+                } else {
+                    let receivedItems = parsedBody.items
+                    this.setState({ items: receivedItems })
+                    this.props.history.push('/BuyHomepage/displaySearchResults')
+                }
+            })
 
     }
 
     /* takes the items in that have been stored in the state from the response from the backend,
     and passes them as a props to the DisplayItems component*/
-    displayItems(){
+    displayItems() {
         let items = this.state.items
         return (<DisplayItems items={items} />)
     }
 
-    render(){
+    render() {
         return (
             //Browser router goes in app.js
             <div>
-            
-            <button onClick={this.displayAllItemsForSale}>See all items for sale</button>
-
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                What are you looking for today?
-                <input type='text' value={this.inputSearch} onChange={this.handleChange} />
-                <input type='submit' />
-                </form>
+                <div>
+                    <Link to='/Homepage'>Link to homepage</Link>
                 </div>
-            
-            {/* this route applies to seeing all items for sale AND to seeing the search results  */}
-            <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} />
-            
+                <button onClick={this.displayAllItemsForSale}>See all items for sale</button>
+
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        What are you looking for today?
+                <input type='text' value={this.inputSearch} onChange={this.handleChange} />
+                        <input type='submit' />
+                    </form>
+                </div>
+
+                {/* this route applies to seeing all items for sale AND to seeing the search results  */}
+                <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} />
+
             </div>
         )
     }
