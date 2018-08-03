@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 
 
@@ -16,6 +15,12 @@ class Login extends Component {
     handleUsernameSubmit = event => {
         event.preventDefault();
         this.setState({username: this.state.inputUsernameValue})
+        // add fetch
+        // add .then
+        // backend will analyze it and send a respon
+        // send response to app.js and set state
+        // add if/else incase password is incorrect
+        // last line will be path to homepage .history
     }
     
     handleUsernameChange = event => {
