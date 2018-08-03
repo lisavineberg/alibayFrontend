@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom'
 
+/*the class declaration below is just to allow the page to run properly until the actual class
+gets created */
 class DisplayItems extends Component {}
 
 class BuyHomepageBasic extends Component {
@@ -9,6 +11,7 @@ class BuyHomepageBasic extends Component {
         this.state={
             inputSearch:'',
             search:'',
+            /* would items be an array or an object?*/ 
             items: []
         }
         this.handleChange = this.handleChange.bind(this)
