@@ -14,7 +14,7 @@ class Homepage extends Component{
             <Link to="/MyHistory">
                 <button>My history</button>
             </Link>  
-            <Link to="/DisplayItems">
+            <Link to="/BuyHomepage">
                 <button>Buy Something</button>
             </Link>
             <Link to="/CreateAListing">
