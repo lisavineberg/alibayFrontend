@@ -12,13 +12,21 @@ class MyHistory extends Component {
     render() {
         return (
             <div>
-                <div>
-                    See what I've bought
+                 <div>
+                    <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
+                    <button>
+                    See what I've bought
+                    </button>
+               
+                    <button>
                     See what I've sold
+                    </button>
                 </div>
             </div>
         )
     }
 }
+
+export default MyHistory
