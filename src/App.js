@@ -5,6 +5,7 @@ import BuyHomepage from './components/BuyHomepage.js'
 import CreateAListing from './components/CreateAListing.js'
 import Login from './components/Login.js'
 import SignUp from './components/SignUp.js'
+import ListingSubmitted from './components/ListingSubmitted';
 
 class App extends Component {
   render() {
@@ -16,6 +17,8 @@ class App extends Component {
        <Route path='/BuyHomepage' exact={false} render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact={false} render={ () => <CreateAListing /> } />
        <Route path='/Login' exact={true} render={ () => <Login /> } />
+       <Route path='/ListingSubmitted' exact={true} render={ () => <ListingSubmitted />} />
+
       </div>
       </BrowserRouter>
     );
