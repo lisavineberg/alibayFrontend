@@ -8,6 +8,19 @@ import SignUp from './components/SignUp.js'
 import ListingSubmitted from './components/ListingSubmitted';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      //userID would be set on Login
+      userID: 2
+    }
+    this.renderCreateAListing = this.renderCreateAListing.bind(this)
+  }
+
+  renderCreateAListing(){
+    return (<CreateAListing userID={this.state.userID} />)
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -15,7 +28,7 @@ class App extends Component {
        Hi guys!
        <Route path='/SignUp' exact={true} render={ () => <SignUp /> } />
        <Route path='/BuyHomepage' exact={false} render={ () => <BuyHomepage /> } />
-       <Route path='/CreateAListing' exact={false} render={ () => <CreateAListing /> } />
+       <Route path='/CreateAListing' exact={false} render={ this.renderCreateAListing } />
        <Route path='/Login' exact={true} render={ () => <Login /> } />
        <Route path='/ListingSubmitted' exact={true} render={ () => <ListingSubmitted />} />
 

@@ -58,6 +58,7 @@ class CreateAListingBasic extends Component {
             itemName: this.state.itemName, 
             itemDesc: this.state.itemDesc, 
             itemPrice: this.state.inputItemPrice, 
+            //userID below will come as a props from the App.js
             sellerID: userID,
             itemID: this.state.itemID
         }

@@ -6,6 +6,7 @@ import BuyHomepage from './BuyHomepage';
 (it achieves this by using the itemID that has been passed as props from the CreateAListing component),
 or show all the items available for sale (creating an instance of the BuyHomepage) */
 
+
 class Item extends Component {}
 
 class ListingSubmittedBasic extends Component {
@@ -13,7 +14,7 @@ class ListingSubmittedBasic extends Component {
         super()
         this.state = {
             //receives the itemID from the CreateAListing component
-            itemID: this.props.itemID,
+            // itemID: this.props.itemID,
             receivedItem: {}
         }
         this.renderItem = this.renderItem.bind(this)
@@ -32,7 +33,7 @@ class ListingSubmittedBasic extends Component {
     }
 
     renderBuyHomepage() {
-        return (<BuyHomepage />)
+        this.props.history.push('/BuyHomepage')
     }
 
     displayItem(){
