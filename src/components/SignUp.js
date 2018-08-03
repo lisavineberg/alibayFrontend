@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class Signup extends Component{
+class SignUp extends Component{
     constructor(){
         super();
         this.state = {
@@ -55,3 +55,5 @@ class Signup extends Component{
         )
     }
 }
+
+export default SignUp;

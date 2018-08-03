@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import BuyHomepage from './components/BuyHomepage.js'
 import CreateAListing from './components/CreateAListing.js'
 import Login from './components/Login.js'
+import SignUp from './components/SignUp.js'
 
 class App extends Component {
   render() {
@@ -11,11 +12,10 @@ class App extends Component {
       <BrowserRouter>
       <div className="App">
        Hi guys!
-       <Route path='/Signup' exact={true} render={ () => <SignUp /> } />
+       <Route path='/SignUp' exact={true} render={ () => <SignUp /> } />
        <Route path='/BuyHomepage' exact={false} render={ () => <BuyHomepage /> } />
        <Route path='/CreateAListing' exact={false} render={ () => <CreateAListing /> } />
        <Route path='/Login' exact={true} render={ () => <Login /> } />
-
       </div>
       </BrowserRouter>
     );
