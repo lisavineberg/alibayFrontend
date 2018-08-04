@@ -4,12 +4,42 @@ myhistory page */
 import React, { Component } from 'react';
 import { Link, Route, withRouter } from 'react-router-dom'
 
+//the boughthistory and soldhistory classes are temporary until we create actual ones
+class BoughtHistory extends Component {
+    render(){
+        return (
+            <div>Hi</div>
+        )
+    }
+}
+
+class SoldHistory extends Component {
+    render(){
+        return(
+            <div>Bye</div>
+        )
+    }
+}
+
 class MyHistory extends Component {
     constructor() {
         super()
-        // this.state = {
-        //     userID: this.props.userID
-        // }
+        this.state = {
+            // userID: this.props.userID
+            boughtHistory: false,
+            soldHistory: false
+        }
+        this.toggleBoughtHistory = this.toggleBoughtHistory.bind(this)
+        this.toggleSoldHistory = this.toggleSoldHistory.bind(this)
+    }
+
+    //switches whether the boughtHistory flag is true
+    toggleBoughtHistory(){
+        this.setState({ boughtHistory: !this.state.boughtHistory})
+    }
+
+    toggleSoldHistory(){
+        this.setState({ soldHistory: !this.state.soldHistory })
     }
 
     render() {
@@ -19,14 +49,23 @@ class MyHistory extends Component {
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
-                    {/* render a bought history component, toggle? */}
-                    <button>
+                    <button onClick={this.toggleBoughtHistory}>
                     See what I've bought
                     </button>
-               
-                    <button>
+               <div>
+                {
+                    //if boughtHistory is true, display the boughtHistory component
+                    (this.state.boughtHistory) ? <BoughtHistory /> : null
+                }
+                   </div>
+                    <button onClick={this.toggleSoldHistory}>
                     See what I've sold
                     </button>
+                <div>
+                    {
+                        (this.state.soldHistory) ? <SoldHistory /> : null
+                    }
+                    </div>
                 </div>
             </div>
         )
