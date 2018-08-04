@@ -7,9 +7,9 @@ import { Link, Route, withRouter } from 'react-router-dom'
 class MyHistory extends Component {
     constructor() {
         super()
-        this.state = {
-            userID: this.props.userID
-        }
+        // this.state = {
+        //     userID: this.props.userID
+        // }
     }
 
     render() {
@@ -19,6 +19,7 @@ class MyHistory extends Component {
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
+                    {/* render a bought history component, toggle? */}
                     <button>
                     See what I've bought
                     </button>
