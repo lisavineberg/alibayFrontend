@@ -7,6 +7,7 @@ class Login extends Component {
         super();
         this.state = {
             username: "",
+            password: "",
             inputUsernameValue: "",
             inputPasswordValue: ""
         }
@@ -15,12 +16,22 @@ class Login extends Component {
     handleUsernameSubmit = event => {
         event.preventDefault();
         this.setState({username: this.state.inputUsernameValue})
-        // add fetch
+        fetch('/login', { 
+            method: "POST", 
+            body: (JSON.stringify({
+                username: this.state.inputUsernameValue,
+                password: this.state.inputPasswordValue,
+                })
+            )
+        }).then(response => response.json()).then(response => {
+            this.props.onLogin(response);
+        })
+        this.props.history.push('/Homepage')
         // add .then
         // backend will analyze it and send a respon
         // send response to app.js and set state
         // add if/else incase password is incorrect
-        // last line will be path to homepage .history
+        // this.props.history.push('/Homepage')
         // this.props.onLogin(user) [we are passing information up to app.js] it's sending the 'user' data back up to app.js
     }
     
@@ -44,7 +55,7 @@ class Login extends Component {
                         onChange={this.handleUsernameChange}>
                     </input>
                     <input 
-                        type="text"
+                        type="password"
                         placeholder="password"
                         value={this.state.inputPasswordValue}
                         onChange={this.handlePasswordChange}>

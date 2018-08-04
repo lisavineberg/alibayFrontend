@@ -54,6 +54,10 @@ class App extends Component {
     return (<MyHistory userID={this.state.usedID} />)
   }
 
+  handleLogin = response => {
+    this.setState({user: response})
+  }
+
   render() {
     return (
       <BrowserRouter>
