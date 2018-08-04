@@ -12,8 +12,7 @@ class BuyHomepageBasic extends Component {
         this.state = {
             inputSearch: '',
             search: '',
-            /* would items be an array or an object?*/
-            items: []
+            items: {}
             // , userID: this.props.userID
         }
         this.handleChange = this.handleChange.bind(this)
@@ -52,7 +51,7 @@ class BuyHomepageBasic extends Component {
 
     /*sends a get request to ther server for all items for sale (no buyerID)*/
     displayAllItemsForSale() {
-        fetch('/getAllItemsForSale')
+        fetch('/allItemsForSale')
             .then(response => response.text())
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)

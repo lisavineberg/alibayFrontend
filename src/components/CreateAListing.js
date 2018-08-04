@@ -48,8 +48,7 @@ class CreateAListingBasic extends Component {
         this.setState({
             itemName: this.state.inputItemName,
             itemDesc: this.state.inputItemDesc,
-            itemPrice: this.state.inputItemPrice,
-            itemID: Math.floor(Math.random() * 100)
+            itemPrice: this.state.inputItemPrice
         })
 
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
@@ -60,8 +59,7 @@ class CreateAListingBasic extends Component {
             itemDesc: this.state.itemDesc,
             itemPrice: this.state.inputItemPrice,
             //userID below will come as a props from the App.js
-            sellerID: userID,
-            itemID: this.state.itemID
+            sellerID: userID
         }
         fetch('/sellItem', {
             method: 'POST',
