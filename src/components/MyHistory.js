@@ -6,13 +6,7 @@ import { Link, Route, withRouter } from 'react-router-dom'
 import BoughtHistory from './BoughtHistory.js'
 
 //the boughthistory and soldhistory classes are temporary until we create actual ones
-class BoughtHistory extends Component {
-    render(){
-        return (
-            <div>Hi</div>
-        )
-    }
-}
+
 
 class SoldHistory extends Component {
     render(){
