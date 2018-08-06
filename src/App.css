@@ -1,7 +1,18 @@
 .App {
-  text-align: center
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
 body {
-  background-image: url('/images/background.png')
+  background-image: url('./images/background.png')
+}
+
+.linkToHomepage {
+  position: fixed;
+  
+}
+
+button {
+  
+  font-size: 16px;
 }

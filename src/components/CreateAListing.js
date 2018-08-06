@@ -84,12 +84,12 @@ class CreateAListingBasic extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className='linkToHomepage'>
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
                     Create a listing for your item!
-                <div>
+                <div className='createAListingForm'>
                         <form onSubmit={this.handleSubmit}>
                             <div>
                                 Name your listing:

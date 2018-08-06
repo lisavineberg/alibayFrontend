@@ -46,13 +46,15 @@ class ListingSubmittedBasic extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className='linkToHomepage'>
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
                     Would you like to
+                    <div>
                 <button onClick={this.renderItem}> see my listing </button>
                     <button onClick={this.renderBuyHomepage}> see what's for sale </button>
+                    </div>
                     <Route path='/item' render={this.displayItem} />
                 </div>
             </div>
