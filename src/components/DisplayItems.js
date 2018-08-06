@@ -14,7 +14,7 @@ class DisplayItemsBasic extends Component {
     displayItems() {
       return  this.props.items.map(item => {
          return    (
-                <div>
+                <div className='itemInList'>
                     <div>For sale! {item.itemName} </div>
                     <div>Description: {item.description} </div>
                     <div>Price: {item.price} </div>
@@ -31,7 +31,7 @@ class DisplayItemsBasic extends Component {
 
     render() {
         return (
-            <div>
+            <div className='holdingItems'>
               
                 {this.displayItems()}
                
