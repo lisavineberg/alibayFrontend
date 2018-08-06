@@ -9,14 +9,14 @@ body {
 
 .linkToHomepage {
   position: fixed;
+  top: 0%;
+  left: 0%;
   
 }
 
 button {
   
   font-size: 16px;
-<<<<<<< HEAD
-=======
 }
 
 .itemInList {
@@ -34,5 +34,14 @@ button {
 .itemInList:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
->>>>>>> 970d5e4059544a474d6c44860c4efeba067b9c63
+}
+
+.history {
+  display: flex;
+  margin: 200px;
+  justify-content: space-evenly;
+}
+
+a:visited {
+  color: pink
 }

@@ -28,7 +28,7 @@ class CreateAListingBasic extends Component {
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
         this.handleItemPriceChange = this.handleItemPriceChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.displayListingSubmitted = this.displayListingSubmitted.bind(this)
+        // this.displayListingSubmitted = this.displayListingSubmitted.bind(this)
     }
 
     handleItemNameChange(event) {
@@ -63,23 +63,23 @@ class CreateAListingBasic extends Component {
             price: newItemPrice,
             //userID below will come as a props from the App.js
             sellerID: userID
+
         }
         fetch('/sellItem', {
             method: 'POST',
             body: JSON.stringify(itemToSend)
         }).then(response => response.text())
-            .then(
-                /* is there a failure response? I think we assume all sales are registered. Once the listing
-                has been submitted, go to the listingSubmitted page */
-                this.props.history.push('/listingSubmitted')
+            .then( 
+                /* once the listing has been submitted, go to the listingSubmitted page */
+                this.props.history.push('/listingSubmitted/' /*+ responseBody */)
             )
     }
 
-    displayListingSubmitted() {
-        /* pass the itemID here as a props. Then, the listingSubmitted page would have the 
-        itemID, so that it could display that listing as necessary */
-        return (<ListingSubmitted itemID={this.state.itemID} /*userID={this.state.userID*//>)
-    }
+    // displayListingSubmitted() {
+    //     /* pass the itemID here as a props. Then, the listingSubmitted page would have the 
+    //     itemID, so that it could display that listing as necessary */
+    //     return (<ListingSubmitted itemID={this.state.itemID} /*userID={this.state.userID*//>)
+    // }
 
     render() {
         return (
@@ -108,7 +108,7 @@ class CreateAListingBasic extends Component {
                             </div>
                         </form>
                     </div>
-                    <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} />
+                    {/* <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} /> */}
                 </div>
             </div>
         )

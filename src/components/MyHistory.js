@@ -2,7 +2,7 @@
 myhistory page */
 
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import BoughtHistory from './BoughtHistory.js'
 import SoldHistory from './SoldHistory.js'
 
@@ -33,7 +33,7 @@ class MyHistory extends Component {
                  <div className='linkToHomepage'>
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
-                <div>
+                <div className='history'>
                     <button onClick={this.toggleBoughtHistory}>
                     See what I've bought
                     </button>

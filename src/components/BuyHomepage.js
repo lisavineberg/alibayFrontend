@@ -29,17 +29,17 @@ class BuyHomepageBasic extends Component {
     handleSubmit(event) {
         event.preventDefault()
         //submits the search request, clears the search bar
-        this.setState({ search: this.state.inputSearch, inputSearch: '' })
+        let search = this.state.inputSearch
+        this.setState({ search: search, inputSearch: '' })
 
         /*sends a get request to the server with a query parameter of whatever was entered in the
         search bar. Server returns either an array of objects (items) whose names/descriptions include
         the phrase in the search query, or returns a fail
         */
-        fetch('/searchItemForSale?search=' + this.state.search)
+        fetch('/searchItemForSale?search=' + search)
             .then(response => response.text())
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)
-                console.log(parsedBody)
                 if (parsedBody === 'failure') {
                     return (<div> No items found </div>)
                 } else {
@@ -56,7 +56,6 @@ class BuyHomepageBasic extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)
-                console.log(parsedBody)
                 if (parsedBody === 'failure') {
                     //make a boolean flag, this div won't be displayed otherwise
                     return (<div> No items for sale </div>)
