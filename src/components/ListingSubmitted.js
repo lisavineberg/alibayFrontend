@@ -46,7 +46,7 @@ class ListingSubmittedBasic extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className='linkToHomepage'>
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div>
