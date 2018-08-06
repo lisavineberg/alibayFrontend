@@ -24,7 +24,8 @@ class ListingSubmittedBasic extends Component {
     }
 
     renderItem() {
-        let id = this.props.itemID
+        let id = this.props.itemId
+       
         // fetch('/getItem/' + this.state.itemID)
         //     .then(response => response.text())
         //     .then(responseBody => {

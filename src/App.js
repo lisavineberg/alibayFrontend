@@ -36,8 +36,9 @@ class App extends Component {
     return (<BuyHomepage userID={this.state.usedID} />)
   }
 
-  renderListingSubmitted() {
-    return (<ListingSubmitted userID={this.state.usedID} />)
+  renderListingSubmitted(routerData) {
+    let itemId = routerData.match.params.itemId
+    return (<ListingSubmitted userID={this.state.usedID} itemId={itemId} />)
   }
 
   renderSignUp() {
@@ -74,7 +75,7 @@ class App extends Component {
           <Route path='/BuyHomepage' exact={false} render={this.renderBuyHomepage} />
           <Route path='/CreateAListing' exact={false} render={this.renderCreateAListing} />
           <Route path='/Login' exact={true} render={this.renderLogin} />
-          <Route path='/ListingSubmitted' exact={true} render={this.renderListingSubmitted} />
+          <Route path='/ListingSubmitted/:itemId' exact={true} render={this.renderListingSubmitted} />
           <Route path='/Homepage' exact={true} render={this.renderHomepage} />
           <Route path='/MyHistory' exact={true} render={this.renderMyHistory}/>
           <Route path='/itemDetail/:itemId' exact={true} render={this.renderItemDetails}/>

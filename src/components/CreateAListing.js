@@ -69,9 +69,14 @@ class CreateAListingBasic extends Component {
             method: 'POST',
             body: JSON.stringify(itemToSend)
         }).then(response => response.text())
-            .then( 
+            .then( response => {
+                let itemID = JSON.parse(response)
+                
+                this.props.history.push('/listingSubmitted/' + itemID)
+            }
                 /* once the listing has been submitted, go to the listingSubmitted page */
-                this.props.history.push('/listingSubmitted/' /*+ responseBody */)
+                
+                
             )
     }
 
