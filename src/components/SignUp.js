@@ -7,8 +7,10 @@ class SignUp extends Component{
         this.state = {
             username: "",
             password: "",
+            confirmedpassword: "",
             inputpassword: "",
             inputusername: "",
+            inputconfirmedpassword: "",
             signupFailed: false
         }
         this.handleUsernameSubmit = this.handleUsernameSubmit.bind(this)
@@ -18,7 +20,11 @@ class SignUp extends Component{
         event.preventDefault();
         let newUsername = this.state.inputusername
         let newPassword = this.state.inputpassword
-        this.setState({username: newUsername, password: newPassword})
+        let newConfirmedPassword= this.state.inputconfirmedpassword
+        if (newPassword !== newConfirmedPassword){
+            this.setState({ signupFailed: true})
+        } else {
+        this.setState({username: newUsername, password: newPassword, confirmedpassword: newConfirmedPassword})
         /* check that both passwords are the same. if they're not, prompt the user */
 
         fetch('/signup', { 
@@ -35,6 +41,7 @@ class SignUp extends Component{
             }
         })
     }
+    }
     
     handleUsernameChange = event => {
         this.setState({inputusername: event.target.value})
@@ -42,6 +49,10 @@ class SignUp extends Component{
     
     handlePasswordChange = event => {
         this.setState({inputpassword: event.target.value})
+    }
+
+    handleConfirmedPasswordChange = event => {
+        this.setState({inputconfirmedpassword: event.target.value})
     }
 
     render(){
@@ -61,6 +72,14 @@ class SignUp extends Component{
                     value={this.state.inputpassword}
                     onChange={this.handlePasswordChange}>
                 </input>
+                <input 
+                    type="password" 
+                    placeholder="confirm password"
+                    value={this.state.inputconfirmedpassword}
+                    onChange={this.handleConfirmedPasswordChange}>
+                </input>
+
+
                 {/* have a second form for re-enter password */}
                 <input 
                     type="submit">
