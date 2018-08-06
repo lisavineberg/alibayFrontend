@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-class SignUp extends Component{
+class SignUpBasic extends Component{
     constructor(){
         super();
         this.state = {
@@ -38,6 +38,8 @@ class SignUp extends Component{
         .then(response => {
             if (response === 'password too short'){
                 this.setState({ signupFailed: true})
+            } else {
+                this.props.history.push('/Homepage')
             }
         })
     }
@@ -99,4 +101,5 @@ class SignUp extends Component{
     }
 }
 
+let SignUp = withRouter(SignUpBasic)
 export default SignUp;
