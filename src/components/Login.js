@@ -52,6 +52,7 @@ class LoginBasic extends Component {
             <div>
                 <form onSubmit={this.handleUsernameSubmit}>
                     <h2>Login</h2>
+                    
                     <input 
                         type="text" 
                         placeholder="username"

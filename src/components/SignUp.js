@@ -25,7 +25,7 @@ class SignUp extends Component{
             this.setState({ signupFailed: true})
         } else {
         this.setState({username: newUsername, password: newPassword, confirmedpassword: newConfirmedPassword})
-        /* check that both passwords are the same. if they're not, prompt the user */
+        
 
         fetch('/signup', { 
             method: "POST", 
@@ -59,6 +59,7 @@ class SignUp extends Component{
         return(
             <div>
             <h2>Ready to Sign Up?</h2>
+            <h3>please enter a password with a minimum of 5 characters</h3>
             <form onSubmit={this.handleUsernameSubmit}>
                 <input 
                     type="text" 
