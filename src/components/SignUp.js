@@ -19,6 +19,7 @@ class SignUp extends Component{
         let newUsername = this.state.inputusername
         let newPassword = this.state.inputpassword
         this.setState({username: newUsername, password: newPassword})
+        /* check that both passwords are the same. if they're not, prompt the user */
 
         fetch('/signup', { 
             method: "POST", 
@@ -55,11 +56,12 @@ class SignUp extends Component{
                     onChange={this.handleUsernameChange}>
                 </input>
                 <input 
-                    type="text" 
+                    type="password" 
                     placeholder="password"
                     value={this.state.inputpassword}
                     onChange={this.handlePasswordChange}>
                 </input>
+                {/* have a second form for re-enter password */}
                 <input 
                     type="submit">
                 </input>

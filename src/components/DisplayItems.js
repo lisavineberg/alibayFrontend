@@ -7,7 +7,6 @@ items for sale). The itemsto be displayed have been sent as props. */
 class DisplayItemsBasic extends Component {
     constructor(props) {
         super(props)
-        // this.state = { items: this.props.items }
         this.displayItems = this.displayItems.bind(this)
     }
 

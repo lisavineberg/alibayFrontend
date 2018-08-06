@@ -6,15 +6,15 @@ class BoughtHistory extends Component {
         this.state = {
             itemsToShow: []
         }
-        this.showBoughtHistory = this.showBoughtHistory.bind(this)
     }
 
-    showBoughtHistory(){
+    componentDidMount(){
         fetch('/boughtHistory?userID=' + this.state.userID)
         .then(response => response.text())
         .then(responseBody => {
             let itemsReceived = JSON.parse(responseBody)
             this.setState({ itemsToShow: itemsReceived})
+           
         })
     }
     
@@ -26,8 +26,7 @@ class BoughtHistory extends Component {
 
         return (
             <div>
-                {this.showBoughtHistory()}
-                {/* would you just call two functions, like this? */}
+               
                 {this.state.itemsToShow.map(listify)}
                 </div>
 
