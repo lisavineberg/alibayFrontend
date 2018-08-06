@@ -39,10 +39,11 @@ class BuyHomepageBasic extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)
+                console.log(parsedBody)
                 if (parsedBody === 'failure') {
                     return (<div> No items found </div>)
                 } else {
-                    let receivedItems = parsedBody.items
+                    let receivedItems = parsedBody
                     this.setState({ items: receivedItems })
                     this.props.history.push('/BuyHomepage/displaySearchResults')
                 }
