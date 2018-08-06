@@ -7,7 +7,8 @@ import Login from './components/Login.js'
 import SignUp from './components/SignUp.js'
 import ListingSubmitted from './components/ListingSubmitted'
 import Homepage from './components/Homepage'
-import MyHistory from './components/MyHistory';
+import MyHistory from './components/MyHistory'
+import Item from './components/Item.js'
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
     this.renderLogin = this.renderLogin.bind(this)
     this.renderHomepage = this.renderHomepage.bind(this)
     this.renderMyHistory = this.renderMyHistory.bind(this)
+    this.renderItemDetails = this.renderItemDetails.bind(this)
 
   }
 
@@ -54,6 +56,11 @@ class App extends Component {
     return (<MyHistory userID={this.state.usedID} />)
   }
 
+  renderItemDetails(routerData){
+    let itemId = routerData.match.params.itemId
+    return (<Item itemId={itemId}/>)
+  }
+
   handleLogin = response => {
     this.setState({user: response})
   }
@@ -70,6 +77,7 @@ class App extends Component {
           <Route path='/ListingSubmitted' exact={true} render={this.renderListingSubmitted} />
           <Route path='/Homepage' exact={true} render={this.renderHomepage} />
           <Route path='/MyHistory' exact={true} render={this.renderMyHistory}/>
+          <Route path='/itemDetail/:itemId' exact={true} render={this.renderItemDetails}/>
 
         </div>
       </body>
