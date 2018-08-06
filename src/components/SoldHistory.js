@@ -9,10 +9,12 @@ class SoldHistory extends Component {
     }
 
     componentDidMount(){
-        fetch('/soldHistory?userID=' + this.state.userID)
+        // fetch('/soldHistory?userID=' + this.state.userID)
+        fetch('/soldHistory')
         .then(response => response.text())
         .then(responseBody => {
             let itemsReceived = JSON.parse(responseBody)
+            console.log(itemsReceived)
             this.setState({ itemsToShow: itemsReceived})
         })
     }

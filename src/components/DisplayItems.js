@@ -25,10 +25,6 @@ class DisplayItemsBasic extends Component {
 
     }
 
-    renderItemDetails(){
-        return <Item />
-    }
-
     render() {
         return (
             <div className='holdingItems'>
