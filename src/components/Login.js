@@ -1,38 +1,42 @@
 import React, {Component} from "react";
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 
-class Login extends Component {
+class LoginBasic extends Component {
     constructor() {
         super();
         this.state = {
             username: "",
             password: "",
             inputUsernameValue: "",
-            inputPasswordValue: ""
+            inputPasswordValue: "",
+            loginFailed: false
         }
     }
 
     handleUsernameSubmit = event => {
         event.preventDefault();
-        this.setState({username: this.state.inputUsernameValue})
+        let newUsername = this.state.inputUsernameValue
+        let newPassword = this.state.inputPasswordValue
+        //can't setState right away with the inputValues, because setState only happens later
+        this.setState({username: newUsername, password: newPassword})
         fetch('/login', { 
             method: "POST", 
             body: (JSON.stringify({
-                username: this.state.inputUsernameValue,
-                password: this.state.inputPasswordValue,
+                username: newUsername,
+                password: newPassword
                 })
             )
-        }).then(response => response.json()).then(response => {
-            this.props.onLogin(response);
+        }).then(response => response.text())
+        .then(response => {
+            //if response is login successful, go to homepage, otherwise, loginFailed
+            if (response === 'login successful'){
+                this.props.history.push('/Homepage')
+            } else {
+                this.setState({ loginFailed:true})
+              
+            }
         })
-        this.props.history.push('/Homepage')
-        // add .then
-        // backend will analyze it and send a respon
-        // send response to app.js and set state
-        // add if/else incase password is incorrect
-        // this.props.history.push('/Homepage')
-        // this.props.onLogin(user) [we are passing information up to app.js] it's sending the 'user' data back up to app.js
     }
     
     handleUsernameChange = event => {
@@ -69,10 +73,15 @@ class Login extends Component {
                         New Member?
                     </button>
                 </Link>
+                <div>
+                   { (this.state.loginFailed) ? (<div> Login failed </div>) : null }
+                    </div>
+
             </div>
         )
     }
 }
 
 
+let Login = withRouter(LoginBasic)
 export default Login;

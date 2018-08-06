@@ -12,7 +12,7 @@ class BuyHomepageBasic extends Component {
         this.state = {
             inputSearch: '',
             search: '',
-            items: {}
+            items: []
             // , userID: this.props.userID
         }
         this.handleChange = this.handleChange.bind(this)
@@ -55,10 +55,13 @@ class BuyHomepageBasic extends Component {
             .then(response => response.text())
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)
+                console.log(parsedBody)
                 if (parsedBody === 'failure') {
+                    //make a boolean flag, this div won't be displayed otherwise
                     return (<div> No items for sale </div>)
                 } else {
-                    let receivedItems = parsedBody.items
+                    let receivedItems = parsedBody
+                    
                     this.setState({ items: receivedItems })
                     this.props.history.push('/BuyHomepage/displaySearchResults')
                 }
@@ -89,9 +92,8 @@ class BuyHomepageBasic extends Component {
                         <input type='submit' />
                     </form>
                 </div>
-
                 {/* this route applies to seeing all items for sale AND to seeing the search results  */}
-                <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} />
+                <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} items={this.state.items} />
 
             </div>
         )

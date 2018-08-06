@@ -8,21 +8,39 @@ class SignUp extends Component{
             username: "",
             password: "",
             inputpassword: "",
-            inputusername: ""
+            inputusername: "",
+            signupFailed: false
         }
+        this.handleUsernameSubmit = this.handleUsernameSubmit.bind(this)
     }
 
-    handleUsernameSubmit = event => {
+    handleUsernameSubmit(event) {
         event.preventDefault();
-        this.setState({username: this.state.inputUsernameValue})
+        let newUsername = this.state.inputusername
+        let newPassword = this.state.inputpassword
+        this.setState({username: newUsername, password: newPassword})
+
+        fetch('/signup', { 
+            method: "POST", 
+            body: (JSON.stringify({
+                username: newUsername,
+                password: newPassword
+                })
+            )
+        }).then(response => response.text())
+        .then(response => {
+            if (response === 'password too short'){
+                this.setState({ signupFailed: true})
+            }
+        })
     }
     
     handleUsernameChange = event => {
-        this.setState({inputUsernameValue: event.target.value})
+        this.setState({inputusername: event.target.value})
     }
     
     handlePasswordChange = event => {
-        this.setState({inputPasswordValue: event.target.value})
+        this.setState({inputpassword: event.target.value})
     }
 
     render(){
@@ -33,13 +51,13 @@ class SignUp extends Component{
                 <input 
                     type="text" 
                     placeholder="username"
-                    value={this.state.inputUsernameValue}
+                    value={this.state.inputusername}
                     onChange={this.handleUsernameChange}>
                 </input>
                 <input 
                     type="text" 
-                    placeholder="username"
-                    value={this.state.inputPasswordValue}
+                    placeholder="password"
+                    value={this.state.inputpassword}
                     onChange={this.handlePasswordChange}>
                 </input>
                 <input 
@@ -51,6 +69,9 @@ class SignUp extends Component{
                 Back
                 </button>
             </Link>
+            <div>
+                {(this.state.signupFailed) ? <div>Sign up failed, password or username too short</div> : null}
+                </div>
             </div>
         )
     }

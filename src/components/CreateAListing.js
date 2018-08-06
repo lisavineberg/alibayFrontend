@@ -45,25 +45,28 @@ class CreateAListingBasic extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        let newItemName = this.state.inputItemName
+        let newItemPrice = this.state.inputItemPrice
+        let newItemDesc = this.state.inputItemDesc
         this.setState({
-            itemName: this.state.inputItemName,
-            itemDesc: this.state.inputItemDesc,
-            itemPrice: this.state.inputItemPrice
+            itemName: newItemName,
+            itemDesc: newItemDesc,
+            itemPrice: newItemPrice
         })
 
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
         the item to send it to the backend. Also, userID will need to have been sent as a props
         from... somewhere. The item id will be generate here? */
         let itemToSend = {
-            itemName: this.state.itemName,
-            itemDesc: this.state.itemDesc,
-            itemPrice: this.state.inputItemPrice,
+            itemName: newItemName,
+            description: newItemDesc,
+            price: newItemPrice,
             //userID below will come as a props from the App.js
             sellerID: userID
         }
         fetch('/sellItem', {
             method: 'POST',
-            body: itemToSend
+            body: JSON.stringify(itemToSend)
         }).then(response => response.text())
             .then(
                 /* is there a failure response? I think we assume all sales are registered. Once the listing

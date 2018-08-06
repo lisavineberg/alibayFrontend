@@ -61,7 +61,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-     
+      <body>
         <div className="App">
           <Route path='/SignUp' exact={true} render={this.renderSignUp} />
           <Route path='/BuyHomepage' exact={false} render={this.renderBuyHomepage} />
@@ -72,7 +72,7 @@ class App extends Component {
           <Route path='/MyHistory' exact={true} render={this.renderMyHistory}/>
 
         </div>
-      
+      </body>
       </BrowserRouter>
     );
   }
