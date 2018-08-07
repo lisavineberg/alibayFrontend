@@ -15,7 +15,6 @@ class BoughtHistory extends Component {
         .then(responseBody => {
             
             let itemsReceived = JSON.parse(responseBody)
-            console.log(itemsReceived)
             this.setState({ itemsToShow: itemsReceived})
            
         })

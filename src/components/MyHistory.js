@@ -34,19 +34,21 @@ class MyHistory extends Component {
                     <Link to='/Homepage'>Link to homepage</Link>
                 </div>
                 <div className='history'>
+                <div>
                     <button onClick={this.toggleBoughtHistory}>
                     See what I've bought
                     </button>
-               <div>
+               
                 {
                     //if boughtHistory is true, display the boughtHistory component
                     (this.state.boughtHistory) ? <BoughtHistory /> : null
                 }
                    </div>
+                   <div>
                     <button onClick={this.toggleSoldHistory}>
                     See what I've sold
                     </button>
-                <div>
+                
                     {
                         (this.state.soldHistory) ? <SoldHistory /> : null
                     }

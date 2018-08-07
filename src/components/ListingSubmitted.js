@@ -26,13 +26,9 @@ class ListingSubmittedBasic extends Component {
     renderItem() {
         let id = this.props.itemId
        
-        // fetch('/getItem/' + this.state.itemID)
-        //     .then(response => response.text())
-        //     .then(responseBody => {
-        //         let receivedItem = JSON.parse(responseBody)
-        //         this.setState({ receivedItem: receivedItem })
+     
                 this.props.history.push('/itemDetail/' + id)
-            // })
+      
     }
 
     renderBuyHomepage() {
@@ -56,7 +52,6 @@ class ListingSubmittedBasic extends Component {
                 <button onClick={this.renderItem}> see my listing </button>
                     <button onClick={this.renderBuyHomepage}> see what's for sale </button>
                     </div>
-                    {/* <Route path='/item' render={this.displayItem} /> */}
                 </div>
             </div>
         )
