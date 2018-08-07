@@ -14,7 +14,7 @@ class SoldHistory extends Component {
         .then(response => response.text())
         .then(responseBody => {
             let itemsReceived = JSON.parse(responseBody)
-            console.log(itemsReceived)
+            
             this.setState({ itemsToShow: itemsReceived})
         })
     }
@@ -22,6 +22,7 @@ class SoldHistory extends Component {
     
     render(){
         function listify(elem){
+            // send back itemId, so that you could add the link to itemDetail/:itemId
             return (<li> {elem} </li>)
         }
 
