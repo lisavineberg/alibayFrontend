@@ -4,18 +4,30 @@
 }
 
 body {
-  background-image: url('./images/background.png')
+  background-image: url('./images/drake.png');
+ 
 }
 
 .linkToHomepage {
   position: fixed;
   top: 0%;
   left: 0%;
-  
+  background-image: url('./images/homeButton.png');
+  height: 173px;
+  width: 160 px;
+
+}
+
+.homepageButton {
+  background-color: transparent;
+  background-size: cover;
+  height: 173px;
+  width: 160 px;
+  border: none;
+
 }
 
 button {
-  
   font-size: 16px;
 }
 
@@ -37,11 +49,20 @@ button {
 }
 
 .history {
+  text-align: left;
   display:flex;
-  margin: 200px;
-  justify-content: space-evenly;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;  
+  left: 0%;
+ justify-content: space-between;
+  background-color: transparent;
 }
 
 a:visited {
   color: pink;
+}
+
+.musicVideo {
+  margin-top: 100px;
 }
