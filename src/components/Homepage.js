@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar.js';
+import NavbarHomepage from './NavbarHomepage.js';
 
 
 class Homepage extends Component {
@@ -13,7 +13,7 @@ class Homepage extends Component {
     render() {
         return (
             <div>
-            <Navbar/>
+            <NavbarHomepage/>
                 <Link to="/MyHistory">
                     <button>My history</button>
                 </Link>

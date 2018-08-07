@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class Navbar extends Component {
+class NavbarHomepage extends Component {
     
 
     render() {
@@ -19,20 +19,23 @@ class Navbar extends Component {
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><Link to="/about"> About </Link></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"> <Link to="/login"> LogIn </Link> </a>
-            </li>
-        </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><Link to="/MyHistory"> History </Link> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><Link to="/BuyHomepage"> Buy Something </Link></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><Link to="/CreateAListing"> Sell Something </Link></a>
+      </li>
+    </ul>
+  </div>
 </nav>
             </div>
         )}
 }
 
 
-export default Navbar
+export default NavbarHomepage
