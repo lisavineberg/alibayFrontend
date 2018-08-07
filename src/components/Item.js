@@ -23,7 +23,7 @@ class Item extends Component {
 displayitem = () => {
     return (
         <div>
-            <NavbarHomepage/>
+           
             <ul>
                 <li>Name: {this.state.itemdetails.itemName} </li>
                 <li>Description: {this.state.itemdetails.description} </li>

@@ -60,7 +60,7 @@ class DisplayItemsBasic extends Component {
     render() {
         return (
             <div className='holdingItems'>
-            <NavbarHomepage/>
+            
               
                 {this.displayItems()}
                
