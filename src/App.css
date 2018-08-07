@@ -35,12 +35,17 @@ button {
   /* margin: 100 px; */
   /* padding: 100px; // within the box */
   border: 3px solid darkorange;
-  color: palegoldenrod 
+  color: palegoldenrod;
+  width: 250px;
+  height: 250px;
 }
 
 .holdingItems {
   /* padding: 100px; */
   margin: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  
 }
 
 .itemInList:hover{
