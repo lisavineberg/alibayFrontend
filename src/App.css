@@ -72,11 +72,22 @@ a:visited {
   margin-top: 100px;
 }
 
-/* .itemInListName {
-
-} */
 
 .itemInListLink{
   position: relative;
   top: 200px;
+}
+
+.boughtHistory {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  list-style-image: url('./images/listIcon.png')
+}
+
+.soldHistory {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  list-style-image: url('./images/listIcon.png')
 }

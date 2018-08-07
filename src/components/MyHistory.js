@@ -41,7 +41,7 @@ class MyHistory extends Component {
                
                 {
                     //if boughtHistory is true, display the boughtHistory component
-                    (this.state.boughtHistory) ? <BoughtHistory /> : null
+                    (this.state.boughtHistory) ? <div className='boughtHistory'><BoughtHistory /></div> : null
                 }
                    </div>
                    <div>
@@ -50,7 +50,7 @@ class MyHistory extends Component {
                     </button>
                 
                     {
-                        (this.state.soldHistory) ? <SoldHistory /> : null
+                        (this.state.soldHistory) ? <div className='soldHistory'><SoldHistory /></div> : null
                     }
                     </div>
                 </div>

@@ -95,7 +95,7 @@ class CreateAListingBasic extends Component {
         return (
             <div>
                 <div className='linkToHomepage'>
-                    <Link to='/Homepage'><button className='homepageButton'>___________________</button></Link>
+                    <Link to='/Homepage'><button className='homepageButton'>__________________</button></Link>
                 </div>
                 <div>
                     Create a listing for your item!
