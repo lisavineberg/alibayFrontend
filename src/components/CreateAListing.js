@@ -21,7 +21,8 @@ class CreateAListingBasic extends Component {
             itemName: '',
             itemDesc: '',
             itemPrice: '',
-            itemID: ''
+            itemID: '',
+            notDrakeRelated: false
             // , userID: this.props.userID
         }
         this.handleItemNameChange = this.handleItemNameChange.bind(this)
@@ -54,6 +55,9 @@ class CreateAListingBasic extends Component {
             itemPrice: newItemPrice
         })
 
+        if (newItemDesc.includes('Drake') === false){
+            this.setState({ notDrakeRelated: true})
+        } else {
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
         the item to send it to the backend. Also, userID will need to have been sent as a props
         from... somewhere. The item id will be generate here? */
@@ -78,6 +82,7 @@ class CreateAListingBasic extends Component {
                 
                 
             )
+        }
     }
 
     // displayListingSubmitted() {
@@ -113,6 +118,7 @@ class CreateAListingBasic extends Component {
                             </div>
                         </form>
                     </div>
+                    { (this.state.notDrakeRelated) ? ( <div> Your post is not Drake related! </div>) : null}
                     {/* <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} /> */}
                 </div>
             </div>
