@@ -14,7 +14,7 @@ class Homepage extends Component {
         return (
             <div>
             <NavbarHomepage/>
-                <Link to="/MyHistory">
+                {/* <Link to="/MyHistory">
                     <button>My history</button>
                 </Link>
                 <Link to="/BuyHomepage">
@@ -22,7 +22,7 @@ class Homepage extends Component {
                 </Link>
                 <Link to="/CreateAListing">
                     <button>Sell Something</button>
-                </Link>
+                </Link> */}
                 <div className='musicVideo'>
                 <iframe width="718" height="404" src="https://www.youtube.com/embed/84yTsE4eNYQ" 
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
