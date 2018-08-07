@@ -118,7 +118,7 @@ class CreateAListingBasic extends Component {
                             </div>
                         </form>
                     </div>
-                    { (this.state.notDrakeRelated) ? ( <div> Your post is not Drake related! </div>) : null}
+                    { (this.state.notDrakeRelated) ? ( <div> Your post is not Drake related! He would not approve </div>) : null}
                     {/* <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} /> */}
                 </div>
             </div>
