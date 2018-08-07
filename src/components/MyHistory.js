@@ -31,7 +31,7 @@ class MyHistory extends Component {
         return (
             <div>
                  <div className='linkToHomepage'>
-                    <Link to='/Homepage'><button className='homepageButton'>___________________</button></Link>
+                    <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
                 </div>
                 <div className='history'>
                 <div>

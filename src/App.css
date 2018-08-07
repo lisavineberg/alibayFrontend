@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: "Arial Black", Gadget, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 body {
@@ -70,4 +70,13 @@ a:visited {
 
 .musicVideo {
   margin-top: 100px;
+}
+
+/* .itemInListName {
+
+} */
+
+.itemInListLink{
+  position: relative;
+  top: 200px;
 }
