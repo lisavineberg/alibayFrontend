@@ -15,7 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       //userID would be set on Login
-      userID: 2
+      userID: ''
     }
     this.renderCreateAListing = this.renderCreateAListing.bind(this)
     this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
@@ -25,6 +25,7 @@ class App extends Component {
     this.renderHomepage = this.renderHomepage.bind(this)
     this.renderMyHistory = this.renderMyHistory.bind(this)
     this.renderItemDetails = this.renderItemDetails.bind(this)
+    this.getUserID = this.getUserID.bind(this)
 
   }
 
@@ -42,7 +43,7 @@ class App extends Component {
   }
 
   renderSignUp() {
-    return (<SignUp />)
+    return (<SignUp getUserID={this.getUserID}/>)
   }
 
   renderLogin() {
@@ -64,6 +65,10 @@ class App extends Component {
 
   handleLogin = response => {
     this.setState({user: response})
+  }
+
+  getUserID(userID){
+    this.setState({userID: userID})
   }
 
   render() {

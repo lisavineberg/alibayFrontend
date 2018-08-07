@@ -40,7 +40,11 @@ class SignUpBasic extends Component{
             if (response === 'password too short'){
                 this.setState({ signupFailed: true})
             } else {
-                this.props.history.push('/Homepage')
+                let parsedResponse = JSON.parse(response)
+                this.props.getUserID(parsedResponse)
+                this.props.history.push('/Homepage' )
+                this.setState({ userID: parsedResponse})
+            
             }
         })
     }
@@ -84,8 +88,6 @@ class SignUpBasic extends Component{
                     onChange={this.handleConfirmedPasswordChange}>
                 </input>
 
-
-                {/* have a second form for re-enter password */}
                 <input 
                     type="submit">
                 </input>
