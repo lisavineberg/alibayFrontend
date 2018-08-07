@@ -9,7 +9,7 @@ import album4 from '../images/album4.png';
 import album5 from '../images/album5.png';
 import album6 from '../images/album6.png';
 import album7 from '../images/album7.png';
-import NavbarHomepage from './NavbarHomepage.js';
+
 
 
 /*this page receives items from the buyHomepage (where the user searches for an item/asks to see all
@@ -60,7 +60,6 @@ class DisplayItemsBasic extends Component {
     render() {
         return (
             <div className='holdingItems'>
-            
               
                 {this.displayItems()}
                
