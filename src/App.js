@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   renderLogin() {
-    return (<Login />)
+    return (<Login getUserID={this.getUserID}/>)
   }
 
   renderHomepage() {

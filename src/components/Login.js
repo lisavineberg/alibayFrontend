@@ -11,7 +11,8 @@ class LoginBasic extends Component {
             password: "",
             inputUsernameValue: "",
             inputPasswordValue: "",
-            loginFailed: false
+            loginFailed: false,
+            userID: ''
         }
     }
 
@@ -31,10 +32,14 @@ class LoginBasic extends Component {
         }).then(response => response.text())
         .then(response => {
             //if response is login successful, go to homepage, otherwise, loginFailed
-            if (response === 'login successful'){
-                this.props.history.push('/Homepage')
-            } else {
+            if (response === 'fail'){
                 this.setState({ loginFailed:true})
+                
+            } else {
+                let parsedResponse = JSON.parse(response)
+                this.props.getUserID(parsedResponse)
+                this.setState({ userID: parsedResponse})
+                this.props.history.push('/Homepage')
               
             }
         })
