@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar.js';
 
 
 class Homepage extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             userID: ""
         }
@@ -12,6 +13,7 @@ class Homepage extends Component {
     render() {
         return (
             <div>
+            <Navbar/>
                 <Link to="/MyHistory">
                     <button>My history</button>
                 </Link>
