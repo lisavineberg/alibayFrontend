@@ -8,10 +8,10 @@ import SoldHistory from './SoldHistory.js';
 import NavbarHomepage from './NavbarHomepage.js';
 
 class MyHistory extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            // userID: this.props.userID
+            userID: this.props.userID,
             boughtHistory: false,
             soldHistory: false
         }
@@ -43,7 +43,7 @@ class MyHistory extends Component {
                
                 {
                     //if boughtHistory is true, display the boughtHistory component
-                    (this.state.boughtHistory) ? <div className='boughtHistory'><BoughtHistory /></div> : null
+                    (this.state.boughtHistory) ? <div className='boughtHistory'><BoughtHistory userID={this.state.userID} /></div> : null
                 }
                    </div>
                    <div>
@@ -52,7 +52,7 @@ class MyHistory extends Component {
                     </button>
                 
                     {
-                        (this.state.soldHistory) ? <div className='soldHistory'><SoldHistory /></div> : null
+                        (this.state.soldHistory) ? <div className='soldHistory'><SoldHistory user={this.state.userID}/></div> : null
                     }
                     </div>
                 </div>

@@ -8,13 +8,13 @@ to the backend for the items of interest, stores those in the state, and then ma
 instance of the class "displayItems" with the items of interest passed as props*/
 
 class BuyHomepageBasic extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             inputSearch: '',
             search: '',
-            items: []
-            // , userID: this.props.userID
+            items: [],
+            userID: this.props.userID
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)

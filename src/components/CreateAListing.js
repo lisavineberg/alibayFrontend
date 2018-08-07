@@ -13,8 +13,8 @@ let userID = 1212
 
 
 class CreateAListingBasic extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             inputItemName: '',
             inputItemDesc: '',

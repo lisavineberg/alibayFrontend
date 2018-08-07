@@ -7,13 +7,13 @@ class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userID: ""
+            userID: this.props.userID
         }
     }
     render() {
         return (
             <div>
-            <NavbarHomepage/>
+            <NavbarHomepage />
                 {/* <Link to="/MyHistory">
                     <button>My history</button>
                 </Link>

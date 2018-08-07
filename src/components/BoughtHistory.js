@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import NavbarHomepage from './NavbarHomepage.js';
 
 class BoughtHistory extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            itemsToShow: []
+            itemsToShow: [],
+            userID: this.props.userID
         }
     }
 
     componentDidMount(){
-        // fetch('/boughtHistory?userID=' + this.state.userID)
+        /* fetch('/boughtHistory',{
+            method: 'POST',
+            body: JSON.stringify(this.state.userID)
+        }
+             */
         fetch('/boughtHistory')
         .then(response => response.text())
         .then(responseBody => {

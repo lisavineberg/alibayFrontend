@@ -34,12 +34,12 @@ class App extends Component {
   }
 
   renderBuyHomepage() {
-    return (<BuyHomepage userID={this.state.usedID} />)
+    return (<BuyHomepage userID={this.state.userID} />)
   }
 
   renderListingSubmitted(routerData) {
     let itemId = routerData.match.params.itemId
-    return (<ListingSubmitted userID={this.state.usedID} itemId={itemId} />)
+    return (<ListingSubmitted userID={this.state.userID} itemId={itemId} />)
   }
 
   renderSignUp() {
@@ -51,11 +51,11 @@ class App extends Component {
   }
 
   renderHomepage() {
-    return (<Homepage />)
+    return (<Homepage userID={this.state.userID}/>)
   }
 
   renderMyHistory(){
-    return (<MyHistory userID={this.state.usedID} />)
+    return (<MyHistory userID={this.state.userID} />)
   }
 
   renderItemDetails(routerData){
