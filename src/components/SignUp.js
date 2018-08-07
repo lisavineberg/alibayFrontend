@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link, withRouter } from 'react-router-dom';
+import Navbar from './Navbar.js';
 
 class SignUpBasic extends Component{
     constructor(){
@@ -60,6 +61,7 @@ class SignUpBasic extends Component{
     render(){
         return(
             <div>
+            <Navbar/>
             <h2>Ready to Sign Up?</h2>
             <h3>please enter a password with a minimum of 5 characters</h3>
             <form onSubmit={this.handleUsernameSubmit}>

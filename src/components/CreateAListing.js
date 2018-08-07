@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route, withRouter } from 'react-router-dom'
 import ListingSubmitted from './ListingSubmitted.js'
+import NavbarHomepage from './NavbarHomepage.js';
 
 /*this page creates a listing. It sends the information about the item to be stored in the
 backend. Upon submitting the form, the url is changed, and on changing the url, the listingSubmitted
@@ -94,6 +95,7 @@ class CreateAListingBasic extends Component {
     render() {
         return (
             <div>
+                <NavbarHomepage/>
                 <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>__________________</button></Link>
                 </div>

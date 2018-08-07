@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom';
+import Navbar from './Navbar.js';
 
 
 class LoginBasic extends Component {
@@ -50,6 +51,7 @@ class LoginBasic extends Component {
     render(){
         return(
             <div>
+                <Navbar/>
                 <form onSubmit={this.handleUsernameSubmit}>
                     <h2>Login</h2>
                     

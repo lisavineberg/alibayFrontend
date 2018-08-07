@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import NavbarHomepage from './NavbarHomepage.js';
 
 class Item extends Component {
    constructor(){
@@ -22,6 +23,7 @@ class Item extends Component {
 displayitem = () => {
     return (
         <div>
+            <NavbarHomepage/>
             <ul>
                 <li>Name: {this.state.itemdetails.itemName} </li>
                 <li>Description: {this.state.itemdetails.description} </li>

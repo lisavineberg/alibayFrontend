@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom'
+import { Link, Route, withRouter } from 'react-router-dom';
+import NavbarHomepage from './NavbarHomepage.js';
 //import BuyHomepage from './BuyHomepage'; // don't need this cause we pushed the url instead
 
 /*This page is shown once the listing has been submitted. It gives the user two options, show the listing
@@ -43,6 +44,7 @@ class ListingSubmittedBasic extends Component {
     render() {
         return (
             <div>
+                <NavbarHomepage/>
                <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>___________________</button></Link>
                 </div>

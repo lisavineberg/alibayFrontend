@@ -2,9 +2,10 @@
 myhistory page */
 
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import BoughtHistory from './BoughtHistory.js'
-import SoldHistory from './SoldHistory.js'
+import { Link } from 'react-router-dom';
+import BoughtHistory from './BoughtHistory.js';
+import SoldHistory from './SoldHistory.js';
+import NavbarHomepage from './NavbarHomepage.js';
 
 class MyHistory extends Component {
     constructor() {
@@ -30,6 +31,7 @@ class MyHistory extends Component {
     render() {
         return (
             <div>
+                <NavbarHomepage/>
                  <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
                 </div>

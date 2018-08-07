@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route, withRouter } from 'react-router-dom'
 import DisplayItems from './DisplayItems.js'
+import NavbarHomepage from './NavbarHomepage.js';
 
 /*this page has a search bar and a button to display items for sale. It makes a request
 to the backend for the items of interest, stores those in the state, and then makes an 
@@ -80,6 +81,7 @@ class BuyHomepageBasic extends Component {
         return (
             //Browser router goes in app.js
             <div>
+                <NavbarHomepage/>
                 <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
                 </div>

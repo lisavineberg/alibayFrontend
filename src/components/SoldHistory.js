@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarHomepage from './NavbarHomepage.js';
 
 class SoldHistory extends Component {
     constructor(){
@@ -28,6 +29,7 @@ class SoldHistory extends Component {
 
         return (
             <div>
+                <NavbarHomepage/>
             
                 {this.state.itemsToShow.map(listify)}
                 </div>

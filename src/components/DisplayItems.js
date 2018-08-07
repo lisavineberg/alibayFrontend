@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Route, Link, withRouter } from 'react-router-dom'
-import Item from './Item.js'
-import album0 from '../images/album0.png'
-import album1 from '../images/album1.png'
-import album2 from '../images/album2.png'
-import album3 from '../images/album3.png'
-import album4 from '../images/album4.png'
-import album5 from '../images/album5.png'
-import album6 from '../images/album6.png'
-import album7 from '../images/album7.png'
+import { Route, Link, withRouter } from 'react-router-dom';
+import Item from './Item.js';
+import album0 from '../images/album0.png';
+import album1 from '../images/album1.png';
+import album2 from '../images/album2.png';
+import album3 from '../images/album3.png';
+import album4 from '../images/album4.png';
+import album5 from '../images/album5.png';
+import album6 from '../images/album6.png';
+import album7 from '../images/album7.png';
+import NavbarHomepage from './NavbarHomepage.js';
 
 
 /*this page receives items from the buyHomepage (where the user searches for an item/asks to see all
@@ -59,6 +60,7 @@ class DisplayItemsBasic extends Component {
     render() {
         return (
             <div className='holdingItems'>
+            <NavbarHomepage/>
               
                 {this.displayItems()}
                
