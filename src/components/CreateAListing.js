@@ -54,9 +54,7 @@ class CreateAListingBasic extends Component {
             itemPrice: newItemPrice
         })
 
-        if (newItemDesc.includes('Drake') === false){
-            this.setState({ notDrakeRelated: true})
-        } else {
+        
         /* should it be of the form {item: {name: itemName, desc: itemDesc}}? Need a way to structure 
         the item to send it to the backend. Also, userID will need to have been sent as a props
         from... somewhere. The item id will be generate here? */
@@ -77,10 +75,10 @@ class CreateAListingBasic extends Component {
                 this.setState({ itemId: itemId})
                 this.props.getItemId(itemId)
                 // receives the itemID from the backend
-                this.props.history.push('/listingSubmitted')
+                this.props.history.push('/listingSubmitted/' + itemId)
             }
             )
-        }
+        
     }
 
     // displayListingSubmitted() {

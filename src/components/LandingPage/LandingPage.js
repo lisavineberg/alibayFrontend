@@ -57,6 +57,12 @@ class LandingPage extends Component {
         return (
             <div>
              <Navbar/> 
+             <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">A community of book lovers</h1>
+    <p class="lead">Buy and sell books directly from other book lovers.</p>
+  </div>
+</div>
                 <div className="carousel-centered">
                 <div className="carousel-container">
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
