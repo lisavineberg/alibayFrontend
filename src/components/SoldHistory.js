@@ -11,7 +11,9 @@ class SoldHistory extends Component {
     }
 
     componentDidMount(){
-        /* fetch('/soldHistory', {
+        /* 
+        use this when the soldHistory endpoint is ready
+            fetch('/soldHistory', {
             method: 'POST',
             body: this.state.userID
         }

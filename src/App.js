@@ -15,7 +15,8 @@ class App extends Component {
     super(props)
     this.state = {
       //userID would be set on Login
-      userID: ''
+      userID: '',
+      itemdID: ''
     }
     this.renderCreateAListing = this.renderCreateAListing.bind(this)
     this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
@@ -26,20 +27,20 @@ class App extends Component {
     this.renderMyHistory = this.renderMyHistory.bind(this)
     this.renderItemDetails = this.renderItemDetails.bind(this)
     this.getUserID = this.getUserID.bind(this)
+    this.getItemID = this.getItemID.bind(this)
 
   }
 
   renderCreateAListing() {
-    return (<CreateAListing userID={this.state.userID} />)
+    return (<CreateAListing userID={this.state.userID} getItemID={this.getItemID} />)
   }
 
   renderBuyHomepage() {
     return (<BuyHomepage userID={this.state.userID} />)
   }
 
-  renderListingSubmitted(routerData) {
-    let itemId = routerData.match.params.itemId
-    return (<ListingSubmitted userID={this.state.userID} itemId={itemId} />)
+  renderListingSubmitted() {
+    return (<ListingSubmitted userID={this.state.userID} itemID={this.state.itemID} />)
   }
 
   renderSignUp() {
@@ -51,7 +52,7 @@ class App extends Component {
   }
 
   renderHomepage() {
-    return (<Homepage userID={this.state.userID}/>)
+    return (<Homepage />)
   }
 
   renderMyHistory(){
@@ -69,6 +70,10 @@ class App extends Component {
 
   getUserID(userID){
     this.setState({userID: userID})
+  }
+
+  getItemID(itemID){
+    this.setState({ itemID: itemID})
   }
 
   render() {

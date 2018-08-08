@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom'
-import ListingSubmitted from './ListingSubmitted.js'
+import { Link, withRouter } from 'react-router-dom'
 import NavbarHomepage from './NavbarHomepage.js';
 
 /*this page creates a listing. It sends the information about the item to be stored in the
@@ -8,8 +7,6 @@ backend. Upon submitting the form, the url is changed, and on changing the url, 
 component is rendered. The itemID is passed to the listingSubmitted component, in case it needs
 to render the individual listing */
 
-//creating things for functionality of this individual component
-let userID = 1212
 
 
 class CreateAListingBasic extends Component {
@@ -23,8 +20,8 @@ class CreateAListingBasic extends Component {
             itemDesc: '',
             itemPrice: '',
             itemID: '',
-            notDrakeRelated: false
-            // , userID: this.props.userID
+            notDrakeRelated: false,
+            userID: this.props.userID
         }
         this.handleItemNameChange = this.handleItemNameChange.bind(this)
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
@@ -76,12 +73,11 @@ class CreateAListingBasic extends Component {
         }).then(response => response.text())
             .then( response => {
                 let itemID = JSON.parse(response)
-                
-                this.props.history.push('/listingSubmitted/' + itemID)
+                this.setState({ itemID: itemID})
+                this.props.getItemID(itemID)
+                // receives the itemID from the backend
+                this.props.history.push('/listingSubmitted')
             }
-                /* once the listing has been submitted, go to the listingSubmitted page */
-                
-                
             )
         }
     }
