@@ -41,6 +41,7 @@ class SignUpBasic extends Component{
                 this.setState({ signupFailed: true})
             } else {
                 let parsedResponse = JSON.parse(response)
+                console.log(parsedResponse)
                 this.props.getUserID(parsedResponse)
                 this.props.history.push('/Homepage' )
                 this.setState({ userID: parsedResponse})
