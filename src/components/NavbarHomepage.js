@@ -9,7 +9,7 @@ class NavbarHomepage extends Component {
 
     const logostyle = {
         color: 'white',
-        fontFamily: "'Permanent Marker', cursive",
+        fontFamily: "'Playfair Display', serif",
         fontSize: "30px",
     }
         return (
