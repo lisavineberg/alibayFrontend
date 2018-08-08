@@ -14,13 +14,8 @@ class NavbarHomepage extends Component {
     }
         return (
             <div>
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbarcolor">
   <a class="navbar-brand" href="#" style={logostyle}><Link to='/Homepage'>Bookbay</Link></a>
-=======
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#" style={logostyle}>BookBay</a>
->>>>>>> 6bcb0fcde4e7a028cac606a0755ead176100458c
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
