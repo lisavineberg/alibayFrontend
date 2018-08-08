@@ -50,7 +50,7 @@ class DisplayItemsBasic extends Component {
                 style={myStyle} >
                     <div className='itemInListName'>For sale! {item.itemName} </div>
                     
-                    <div className='itemInListLink'><Link to={'/itemDetail/' + item.itemId}>Link to listing</Link></div>
+                    <div className='itemInListLink'><Link to={'/itemDetail/' + item}>Link to listing</Link></div>
                 </div>
             )
         })

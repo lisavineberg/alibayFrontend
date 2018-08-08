@@ -28,9 +28,16 @@ class BoughtHistory extends Component {
         }
 
         return (
-            <div>
+            <div>{
+
+
+                (this.state.itemsToShow === null) ?
+
+            <div> you haven't bought anything yet! </div> :
                 
-                {this.state.itemsToShow.map(listify)}
+                this.state.itemsToShow.map(listify)
+                
+                }
             </div>
 
         )

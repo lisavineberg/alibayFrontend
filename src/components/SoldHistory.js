@@ -32,7 +32,13 @@ class SoldHistory extends Component {
             <div>
                
             
-                {this.state.itemsToShow.map(listify)}
+                {
+                 (this.state.itemsToShow === null) ?
+                 
+                 <div> you haven't sold anything yet! </div> :
+                    this.state.itemsToShow.map(listify)
+                    
+                    }
                 </div>
 
         )

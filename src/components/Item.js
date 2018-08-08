@@ -12,15 +12,13 @@ class Item extends Component {
     componentDidMount(){
         // it takes a small amount of time to run a fetch
 
-          
+          console.log(this.state.itemId)
             fetch('/getItem?itemId=' + this.state.itemId)
         .then(response => response.text())
         .then(responseBody => {
             let itemdetails = JSON.parse(responseBody)
             console.log(itemdetails)
-            //receives an array of one object
-            itemdetails = itemdetails[0]
-            console.log(itemdetails)
+            
             this.setState({itemdetails})
 
     })
