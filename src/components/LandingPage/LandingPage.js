@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar.js';
 import './LandingPage.css';
+import Footer from '../Footer.js';
 import book1 from './images/book1.JPG';
 import book2 from './images/book2.JPG';
 import book3 from './images/book3.JPG';
@@ -91,6 +92,7 @@ class LandingPage extends Component {
                 </div>
                 </div>
                 </div>
+                <Footer/>
             </div>
         )
     }
