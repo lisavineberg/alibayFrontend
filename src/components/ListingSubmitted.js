@@ -45,9 +45,9 @@ class ListingSubmittedBasic extends Component {
         return (
             <div>
                 <NavbarHomepage/>
-               <div className='linkToHomepage'>
+               {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>___________________</button></Link>
-                </div>
+                </div> */}
                 <div>
                     Would you like to
                     <div>

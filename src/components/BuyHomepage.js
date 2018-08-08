@@ -82,9 +82,9 @@ class BuyHomepageBasic extends Component {
             //Browser router goes in app.js
             <div>
                 <NavbarHomepage/>
-                <div className='linkToHomepage'>
+                {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
-                </div>
+                </div> */}
                 <button onClick={this.displayAllItemsForSale}>See all items for sale</button>
 
                 <div>

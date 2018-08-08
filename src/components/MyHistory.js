@@ -32,9 +32,9 @@ class MyHistory extends Component {
         return (
             <div>
                 <NavbarHomepage/>
-                 <div className='linkToHomepage'>
+                 {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
-                </div>
+                </div> */}
                 <div className='history'>
                 <div>
                     <button onClick={this.toggleBoughtHistory}>

@@ -64,7 +64,7 @@ class CreateAListingBasic extends Component {
             description: newItemDesc,
             price: newItemPrice,
             //userID below will come as a props from the App.js
-            sellerID: userID
+            sellerID: this.state.userID
 
         }
         fetch('/sellItem', {
@@ -92,9 +92,9 @@ class CreateAListingBasic extends Component {
         return (
             <div>
                 <NavbarHomepage/>
-                <div className='linkToHomepage'>
+                {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>__________________</button></Link>
-                </div>
+                </div> */}
                 <div>
                     Create a listing for your item!
                 <div className='createAListingForm'>

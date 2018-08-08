@@ -36,7 +36,7 @@ class SoldHistory extends Component {
 
         return (
             <div>
-                <NavbarHomepage/>
+               
             
                 {this.state.itemsToShow.map(listify)}
                 </div>
