@@ -5,7 +5,7 @@ class BoughtHistory extends Component {
         super(props)
         this.state = {
             itemsToShow: [],
-            userID: this.props.userID
+            userId: this.props.userId
         }
     }
 
@@ -14,7 +14,7 @@ class BoughtHistory extends Component {
         add this when the boughtHistory endpoint works
             fetch('/boughtHistory',{
             method: 'POST',
-            body: JSON.stringify(this.state.userID)
+            body: JSON.stringify(this.state.userId)
         }
              */
         fetch('/boughtHistory')

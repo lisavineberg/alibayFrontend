@@ -20,6 +20,7 @@ class Item extends Component {
         .then(response => response.text())
         .then(responseBody => {
             let itemdetails = JSON.parse(responseBody)
+            console.log(itemdetails)
             //receives an array of one object
             itemdetails = itemdetails[0]
             console.log(itemdetails)

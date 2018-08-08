@@ -37,8 +37,8 @@ class ListingSubmittedBasic extends Component {
     }
 
     displayItem() {
-        let itemID = this.props.itemID
-        return (<Item item={itemID} />)
+        let itemId = this.props.itemId
+        return (<Item itemId={itemId} />)
     }
 
     render() {

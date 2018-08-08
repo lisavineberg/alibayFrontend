@@ -16,8 +16,8 @@ class App extends Component {
     super(props)
     this.state = {
       //userID would be set on Login
-      userID: '',
-      itemdID: ''
+      userId: '',
+      itemdId: ''
     }
     this.renderCreateAListing = this.renderCreateAListing.bind(this)
     this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
@@ -28,29 +28,29 @@ class App extends Component {
     this.renderMyHistory = this.renderMyHistory.bind(this)
     this.renderItemDetails = this.renderItemDetails.bind(this)
     this.renderLandingPage = this.renderLandingPage.bind(this)
-    this.getUserID = this.getUserID.bind(this)
-    this.getItemID = this.getItemID.bind(this)
+    this.getUserId = this.getUserId.bind(this)
+    this.getItemId = this.getItemId.bind(this)
 
   }
 
   renderCreateAListing() {
-    return (<CreateAListing userID={this.state.userID} getItemID={this.getItemID} />)
+    return (<CreateAListing userId={this.state.userId} getItemId={this.getItemId} />)
   }
 
   renderBuyHomepage() {
-    return (<BuyHomepage userID={this.state.userID} />)
+    return (<BuyHomepage userId={this.state.userId} />)
   }
 
   renderListingSubmitted() {
-    return (<ListingSubmitted userID={this.state.userID} itemID={this.state.itemID} />)
+    return (<ListingSubmitted userId={this.state.userId} itemId={this.state.itemId} />)
   }
 
   renderSignUp() {
-    return (<SignUp getUserID={this.getUserID}/>)
+    return (<SignUp getUserId={this.getUserId}/>)
   }
 
   renderLogin() {
-    return (<Login getUserID={this.getUserID}/>)
+    return (<Login getUserId={this.getUserId}/>)
   }
 
   renderHomepage() {
@@ -58,11 +58,11 @@ class App extends Component {
   }
 
   renderLandingPage() {
-    return (<LandingPage userID={this.state.userID}/>)
+    return (<LandingPage userId={this.state.userId}/>)
   }
 
   renderMyHistory(){
-    return (<MyHistory userID={this.state.userID} />)
+    return (<MyHistory userId={this.state.userId} />)
   }
 
   renderItemDetails(routerData){
@@ -74,12 +74,12 @@ class App extends Component {
     this.setState({user: response})
   }
 
-  getUserID(userID){
-    this.setState({userID: userID})
+  getUserId(userId){
+    this.setState({userId: userId})
   }
 
-  getItemID(itemID){
-    this.setState({ itemID: itemID})
+  getItemId(itemId){
+    this.setState({ itemId: itemId})
   }
 
   render() {

@@ -11,7 +11,7 @@ class MyHistory extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            userID: this.props.userID,
+            userId: this.props.userId,
             boughtHistory: false,
             soldHistory: false
         }
@@ -43,7 +43,7 @@ class MyHistory extends Component {
                
                 {
                     //if boughtHistory is true, display the boughtHistory component
-                    (this.state.boughtHistory) ? <div className='boughtHistory'><BoughtHistory userID={this.state.userID} /></div> : null
+                    (this.state.boughtHistory) ? <div className='boughtHistory'><BoughtHistory userId={this.state.userId} /></div> : null
                 }
                    </div>
                    <div>
@@ -52,7 +52,7 @@ class MyHistory extends Component {
                     </button>
                 
                     {
-                        (this.state.soldHistory) ? <div className='soldHistory'><SoldHistory user={this.state.userID}/></div> : null
+                        (this.state.soldHistory) ? <div className='soldHistory'><SoldHistory user={this.state.userId}/></div> : null
                     }
                     </div>
                 </div>

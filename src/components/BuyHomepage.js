@@ -14,7 +14,7 @@ class BuyHomepageBasic extends Component {
             inputSearch: '',
             search: '',
             items: [],
-            userID: this.props.userID
+            userId: this.props.userId
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
