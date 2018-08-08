@@ -65,20 +65,26 @@ class LandingPage extends Component {
                             <div className="imagetext">
                             {/* object is outside of component, so we do not need this */}
                                 <img className="d-block w-100" src={books[0].image} alt="First slide"/>
-                            <p>{books[0].itemName} {books[0].price}</p>
-                            </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>{books[0].itemName}</p> 
+                                    <p>{books[0].price}</p></div>
+                                </div>
                         </div>
                         <div className="carousel-item">
                             <div className="imagetext">
                                 <img className="d-block w-100" src={books[1].image} alt="Second slide"/>
-                            <p>{books[1].itemName} {books[1].price}</p>
-                            </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>{books[1].itemName}</p> 
+                                    <p>{books[1].price}</p></div>
+                                </div>
                         </div>
                         <div className="carousel-item">
                             <div className="imagetext">
                                 <img className="d-block w-100" src={books[2].image} alt="Third slide"/>
-                            <p>{books[2].itemName} {books[2].price}</p>
-                            </div>
+                                <div class="d-flex justify-content-between">
+                                    <p>{books[2].itemName}</p> 
+                                    <p>{books[2].price}</p></div>
+                                </div>
                         </div>
                     </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
