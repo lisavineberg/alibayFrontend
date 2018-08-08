@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Link, withRouter } from 'react-router-dom';
 import Navbar from './Navbar.js';
+import Footer from './Footer.js';
 
 
 class LoginBasic extends Component {
@@ -84,7 +85,7 @@ class LoginBasic extends Component {
                 <div>
                    { (this.state.loginFailed) ? (<div> Login failed </div>) : null }
                     </div>
-
+            <Footer/>
             </div>
         )
     }

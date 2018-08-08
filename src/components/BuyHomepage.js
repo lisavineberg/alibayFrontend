@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, withRouter } from 'react-router-dom'
 import DisplayItems from './DisplayItems.js'
 import NavbarHomepage from './NavbarHomepage.js';
+import Footer from './Footer.js';
 
 /*this page has a search bar and a button to display items for sale. It makes a request
 to the backend for the items of interest, stores those in the state, and then makes an 
@@ -96,6 +97,7 @@ class BuyHomepageBasic extends Component {
                 </div>
                 {/* this route applies to seeing all items for sale AND to seeing the search results  */}
                 <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} items={this.state.items} />
+                <Footer/>
 
             </div>
         )

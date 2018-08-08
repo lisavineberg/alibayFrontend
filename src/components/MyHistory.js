@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import BoughtHistory from './BoughtHistory.js';
 import SoldHistory from './SoldHistory.js';
 import NavbarHomepage from './NavbarHomepage.js';
+import Footer from './Footer.js';
 
 class MyHistory extends Component {
     constructor(props) {
@@ -56,6 +57,7 @@ class MyHistory extends Component {
                     }
                     </div>
                 </div>
+                <Footer/>
             </div>
         )
     }

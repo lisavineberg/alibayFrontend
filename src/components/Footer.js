@@ -6,13 +6,13 @@ class Footer extends Component {
 
     render() {
         return(
-<footer className="page-footer font-small deep-orange darken-4" style={{marginTop:"300px"}}>
+<footer className="page-footer font-small deep-orange darken-4">
 
     <div className="container">
 
       <div className="row">
 
-        <div className="col-md-12 py-5">
+        <div className="col-md-12 py-5 footer-top">
           <div className="mb-5 flex-center">
             <a className="fb-ic">
               <i className="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>

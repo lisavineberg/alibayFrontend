@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import NavbarHomepage from './NavbarHomepage.js';
+import Footer from './Footer.js';
 
 /*this page creates a listing. It sends the information about the item to be stored in the
 backend. Upon submitting the form, the url is changed, and on changing the url, the listingSubmitted
@@ -119,6 +120,7 @@ class CreateAListingBasic extends Component {
                     { (this.state.notDrakeRelated) ? ( <div> Your post is not Drake related! He would not approve </div>) : null}
                     {/* <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} /> */}
                 </div>
+                <Footer/>
                 
             </div>
         )
