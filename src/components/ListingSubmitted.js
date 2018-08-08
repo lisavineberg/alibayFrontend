@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import NavbarHomepage from './NavbarHomepage.js';
+import Item from './Item.js'
 //import BuyHomepage from './BuyHomepage'; // don't need this cause we pushed the url instead
 
 /*This page is shown once the listing has been submitted. It gives the user two options, show the listing
@@ -8,17 +9,15 @@ import NavbarHomepage from './NavbarHomepage.js';
 or show all the items available for sale (creating an instance of the BuyHomepage) */
 
 
-class Item extends Component { }
-
 class ListingSubmittedBasic extends Component {
-    constructor() {
-        super()
-        // this.state = {
-        //     //receives the itemID from the CreateAListing component
+    constructor(props) {
+        super(props)
+        this.state = {
+            //receives the itemID from the CreateAListing component
          
-        //     receivedItem: {}
+            receivedItem: this.props.itemId
             
-        // }
+        }
         this.renderItem = this.renderItem.bind(this)
         this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
         this.displayItem = this.displayItem.bind(this)
