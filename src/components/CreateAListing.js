@@ -94,8 +94,13 @@ class CreateAListingBasic extends Component {
                 <NavbarHomepage/>
                 {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>__________________</button></Link>
+<<<<<<< HEAD
+                </div>
+                <div >
+=======
                 </div> */}
                 <div>
+>>>>>>> 77bfcb017de5cc0b6637e121b8f04372b149cde3
                     Create a listing for your item!
                 <div className='createAListingForm'>
                         <form onSubmit={this.handleSubmit}>
@@ -119,6 +124,7 @@ class CreateAListingBasic extends Component {
                     { (this.state.notDrakeRelated) ? ( <div> Your post is not Drake related! He would not approve </div>) : null}
                     {/* <Route path='/CreateAListing/listingSubmitted' render={this.displayListingSubmitted} /> */}
                 </div>
+                
             </div>
         )
     }

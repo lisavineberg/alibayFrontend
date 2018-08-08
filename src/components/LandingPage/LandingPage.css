@@ -1,0 +1,15 @@
+.carousel-centered{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container{
+    margin-top: 60px;
+    width: 40%;
+}
+
+.imagetext{
+    margin: auto;
+    font-size: 14px;
+    color: grey;
+}
