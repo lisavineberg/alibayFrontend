@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import NavbarHomepage from './NavbarHomepage.js';
 //import BuyHomepage from './BuyHomepage'; // don't need this cause we pushed the url instead
 
@@ -13,12 +13,12 @@ class Item extends Component { }
 class ListingSubmittedBasic extends Component {
     constructor() {
         super()
-        this.state = {
-            //receives the itemID from the CreateAListing component
+        // this.state = {
+        //     //receives the itemID from the CreateAListing component
          
-            receivedItem: {}
+        //     receivedItem: {}
             
-        }
+        // }
         this.renderItem = this.renderItem.bind(this)
         this.renderBuyHomepage = this.renderBuyHomepage.bind(this)
         this.displayItem = this.displayItem.bind(this)
@@ -37,17 +37,17 @@ class ListingSubmittedBasic extends Component {
     }
 
     displayItem() {
-        let item = this.state.receivedItem
-        return (<Item item={item} />)
+        let itemID = this.props.itemID
+        return (<Item item={itemID} />)
     }
 
     render() {
         return (
             <div>
                 <NavbarHomepage/>
-               <div className='linkToHomepage'>
+               {/* <div className='linkToHomepage'>
                     <Link to='/Homepage'><button className='homepageButton'>___________________</button></Link>
-                </div>
+                </div> */}
                 <div>
                     Would you like to
                     <div>

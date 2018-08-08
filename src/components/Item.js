@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import NavbarHomepage from './NavbarHomepage.js';
 
 class Item extends Component {
-   constructor(){
-       super();
-       this.state = {}
+   constructor(props){
+       super(props);
+       this.state = {
+           itemID: this.props.itemID
+       }
    }
    // make a fetch before the page renders, grab item info from backend
     componentDidMount(){
         // it takes a small amount of time to run a fetch
+
+          /* 
+        add this when the getItem endpoint works
+            fetch('/getItem',{
+            method: 'POST',
+            body: JSON.stringify(this.state.itemID)
+        }
+             */
     fetch('/getItem')
         .then(response => response.text())
         .then(responseBody => {

@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import NavbarHomepage from './NavbarHomepage.js';
 
 
 class Homepage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            userID: this.props.userID
-        }
-    }
+//   removed the constructor, don't need the userID here
     render() {
         return (
             <div>

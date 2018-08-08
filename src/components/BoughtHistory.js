@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavbarHomepage from './NavbarHomepage.js';
 
 class BoughtHistory extends Component {
     constructor(props){
@@ -11,7 +10,9 @@ class BoughtHistory extends Component {
     }
 
     componentDidMount(){
-        /* fetch('/boughtHistory',{
+        /* 
+        add this when the boughtHistory endpoint works
+            fetch('/boughtHistory',{
             method: 'POST',
             body: JSON.stringify(this.state.userID)
         }
