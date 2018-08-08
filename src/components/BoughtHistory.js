@@ -10,13 +10,7 @@ class BoughtHistory extends Component {
     }
 
     componentDidMount(){
-        /* 
-        add this when the boughtHistory endpoint works
-            fetch('/boughtHistory',{
-            method: 'POST',
-            body: JSON.stringify(this.state.userId)
-        }
-             */
+      
         fetch('/boughtHistory?userId=' + this.state.userId)
         .then(response => response.text())
         .then(responseBody => {
