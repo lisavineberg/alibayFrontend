@@ -7,7 +7,6 @@ body {
   background: #ADA996;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-   
   /*background-image: url('./images/drake.png'); */
   /* background-size: cover; */
  
@@ -75,6 +74,8 @@ a:visited {
 
 .musicVideo {
   margin-top: 100px;
+  position: relative;
+    overflow: hidden;
 }
 
 
@@ -105,11 +106,15 @@ footer.page-footer{
   /* margin-top:px !important;
   position:fixed;
   width: 100vw; */
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;  
-  text-align: center;
+  bottom:0px;
+height:30ox;
+right:0%;
+left:0%;
+position:fixed!important;
+width: 100%;
+
+text-align:center;
+visibility:visible;
 }
 
 .footer-top {
