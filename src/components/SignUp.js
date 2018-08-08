@@ -28,12 +28,10 @@ class SignUpBasic extends Component{
         this.setState({username: newUsername, password: newPassword, confirmedpassword: newConfirmedPassword})
         
 
+        let body = { username: newUsername, password: newPassword }
         fetch('/signup', { 
             method: "POST", 
-            body: (JSON.stringify({
-                username: newUsername,
-                password: newPassword
-                })
+            body: (JSON.stringify(body)
             )
         }).then(response => response.text())
         .then(response => {

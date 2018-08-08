@@ -13,10 +13,7 @@ class Item extends Component {
         // it takes a small amount of time to run a fetch
 
           
-            fetch('/getItem', {
-            method: 'POST',
-            body: JSON.stringify(this.state.itemId)
-        })
+            fetch('/getItem?itemId=' + this.state.itemId)
         .then(response => response.text())
         .then(responseBody => {
             let itemdetails = JSON.parse(responseBody)

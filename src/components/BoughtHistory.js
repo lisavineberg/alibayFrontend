@@ -17,7 +17,7 @@ class BoughtHistory extends Component {
             body: JSON.stringify(this.state.userId)
         }
              */
-        fetch('/boughtHistory')
+        fetch('/boughtHistory?userId=' + this.state.userId)
         .then(response => response.text())
         .then(responseBody => {
             

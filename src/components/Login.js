@@ -36,6 +36,7 @@ class LoginBasic extends Component {
                 this.setState({ loginFailed:true})
                 
             } else {
+                //should be receiving userId of user!
                 let parsedResponse = JSON.parse(response)
                 this.props.getUserId(parsedResponse)
                 this.setState({ userId: parsedResponse})

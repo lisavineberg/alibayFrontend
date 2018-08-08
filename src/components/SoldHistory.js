@@ -11,14 +11,8 @@ class SoldHistory extends Component {
     }
 
     componentDidMount(){
-        /* 
-        use this when the soldHistory endpoint is ready
-            fetch('/soldHistory', {
-            method: 'POST',
-            body: this.state.userId
-        }
-        */
-        fetch('/soldHistory')
+      
+        fetch('/soldHistory?userId=' + this.state.userId)
         .then(response => response.text())
         .then(responseBody => {
             let itemsReceived = JSON.parse(responseBody)

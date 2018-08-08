@@ -14,7 +14,8 @@ class BuyHomepageBasic extends Component {
             inputSearch: '',
             search: '',
             items: [],
-            userId: this.props.userId
+            userId: this.props.userId,
+            noItemsForSale: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -42,7 +43,7 @@ class BuyHomepageBasic extends Component {
             .then(responseBody => {
                 let parsedBody = JSON.parse(responseBody)
                 if (parsedBody === 'failure') {
-                    return (<div> No items found </div>)
+                    this.setState({ noItemsForSale: true})
                 } else {
                     let receivedItems = parsedBody
                     this.setState({ items: receivedItems })
@@ -56,8 +57,10 @@ class BuyHomepageBasic extends Component {
         fetch('/allItemsForSale')
             .then(response => response.text())
             .then(responseBody => {
+                
                 let parsedBody = JSON.parse(responseBody)
-                if (parsedBody === 'failure') {
+                console.log(parsedBody)
+                if (parsedBody === 'f') {
                     //make a boolean flag, this div won't be displayed otherwise
                     return (<div> No items for sale </div>)
                 } else {
@@ -94,6 +97,13 @@ class BuyHomepageBasic extends Component {
                         <input type='submit' />
                     </form>
                 </div>
+                <div>
+                    {
+                        (this.state.noItemsForSale) ?
+                        <div>No items for sale</div> :
+                        null
+                    }
+                    </div>
                 {/* this route applies to seeing all items for sale AND to seeing the search results  */}
                 <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} items={this.state.items} />
 
