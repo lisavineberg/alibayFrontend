@@ -60,14 +60,15 @@ button {
 }
 
 .history {
-  text-align: left;
-  display:flex;
-  flex-direction: column;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
   position: absolute;
-  top: 50%;  
+  margin-top: 200px;
+  /* top: 50%;  
   left: 0%;
  justify-content: space-between;
-  background-color: transparent;
+  background-color: transparent; */
 }
 
 a {
