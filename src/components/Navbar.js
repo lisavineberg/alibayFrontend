@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "../App.css";
 
+
 class Navbar extends Component {
     
 
@@ -21,7 +22,7 @@ class Navbar extends Component {
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#"><Link to="/about"> About </Link></a>
