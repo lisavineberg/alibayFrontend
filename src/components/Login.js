@@ -12,7 +12,7 @@ class LoginBasic extends Component {
             inputUsernameValue: "",
             inputPasswordValue: "",
             loginFailed: false,
-            userID: ''
+            userId: ''
         }
     }
 
@@ -37,8 +37,8 @@ class LoginBasic extends Component {
                 
             } else {
                 let parsedResponse = JSON.parse(response)
-                this.props.getUserID(parsedResponse)
-                this.setState({ userID: parsedResponse})
+                this.props.getUserId(parsedResponse)
+                this.setState({ userId: parsedResponse})
                 this.props.history.push('/Homepage')
               
             }

@@ -41,9 +41,10 @@ class SignUpBasic extends Component{
                 this.setState({ signupFailed: true})
             } else {
                 let parsedResponse = JSON.parse(response)
-                this.props.getUserID(parsedResponse)
+                console.log(parsedResponse)
+                this.props.getUserId(parsedResponse)
                 this.props.history.push('/Homepage' )
-                this.setState({ userID: parsedResponse})
+                this.setState({ userId: parsedResponse})
             
             }
         })

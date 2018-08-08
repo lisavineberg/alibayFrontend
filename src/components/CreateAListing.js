@@ -19,9 +19,9 @@ class CreateAListingBasic extends Component {
             itemName: '',
             itemDesc: '',
             itemPrice: '',
-            itemID: '',
+            itemId: '',
             notDrakeRelated: false,
-            userID: this.props.userID
+            userId: this.props.userId
         }
         this.handleItemNameChange = this.handleItemNameChange.bind(this)
         this.handleItemDescChange = this.handleItemDescChange.bind(this)
@@ -64,7 +64,7 @@ class CreateAListingBasic extends Component {
             description: newItemDesc,
             price: newItemPrice,
             //userID below will come as a props from the App.js
-            sellerID: this.state.userID
+            sellerId: this.state.userId
 
         }
         fetch('/sellItem', {
@@ -72,9 +72,9 @@ class CreateAListingBasic extends Component {
             body: JSON.stringify(itemToSend)
         }).then(response => response.text())
             .then( response => {
-                let itemID = JSON.parse(response)
-                this.setState({ itemID: itemID})
-                this.props.getItemID(itemID)
+                let itemId = JSON.parse(response)
+                this.setState({ itemId: itemId})
+                this.props.getItemId(itemId)
                 // receives the itemID from the backend
                 this.props.history.push('/listingSubmitted')
             }

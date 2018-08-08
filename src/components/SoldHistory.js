@@ -5,7 +5,7 @@ class SoldHistory extends Component {
     constructor(props){
         super(props)
         this.state = {
-            userID: this.props.userID, 
+            userId: this.props.userId, 
             itemsToShow: []
         }
     }
@@ -15,7 +15,7 @@ class SoldHistory extends Component {
         use this when the soldHistory endpoint is ready
             fetch('/soldHistory', {
             method: 'POST',
-            body: this.state.userID
+            body: this.state.userId
         }
         */
         fetch('/soldHistory')
