@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavbarHomepage from './NavbarHomepage.js';
+import Footer from './Footer.js';
 
 
 class Homepage extends Component {
@@ -21,6 +22,7 @@ class Homepage extends Component {
                 <iframe width="718" height="404" src="https://www.youtube.com/embed/84yTsE4eNYQ" 
                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
+                <Footer/>
             </div>
         )
     }

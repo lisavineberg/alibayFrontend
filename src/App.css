@@ -100,3 +100,18 @@ a:visited {
 .navbarcolor{
   background-color: darkred !important;
 }
+
+footer.page-footer{
+  /* margin-top:px !important;
+  position:fixed;
+  width: 100vw; */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;  
+  text-align: center;
+}
+
+.footer-top {
+  height: 40px !important;
+}

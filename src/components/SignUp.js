@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Link, withRouter } from 'react-router-dom';
 import Navbar from './Navbar.js';
+import Footer from './Footer.js';
 
 class SignUpBasic extends Component{
     constructor(){
@@ -99,6 +100,7 @@ class SignUpBasic extends Component{
             <div>
                 {(this.state.signupFailed) ? <div>Sign up failed, password or username too short</div> : null}
                 </div>
+            <Footer/>
             </div>
         )
     }
