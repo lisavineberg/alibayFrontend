@@ -8,6 +8,7 @@ import SignUp from './components/SignUp.js'
 import ListingSubmitted from './components/ListingSubmitted'
 import Homepage from './components/Homepage'
 import MyHistory from './components/MyHistory'
+import LandingPage from './components/LandingPage/LandingPage'
 import Item from './components/Item.js'
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
     this.renderHomepage = this.renderHomepage.bind(this)
     this.renderMyHistory = this.renderMyHistory.bind(this)
     this.renderItemDetails = this.renderItemDetails.bind(this)
+    this.renderLandingPage = this.renderLandingPage.bind(this)
     this.getUserID = this.getUserID.bind(this)
 
   }
@@ -52,6 +54,10 @@ class App extends Component {
 
   renderHomepage() {
     return (<Homepage userID={this.state.userID}/>)
+  }
+
+  renderLandingPage() {
+    return (<LandingPage userID={this.state.userID}/>)
   }
 
   renderMyHistory(){
@@ -84,6 +90,7 @@ class App extends Component {
           <Route path='/Homepage' exact={true} render={this.renderHomepage} />
           <Route path='/MyHistory' exact={true} render={this.renderMyHistory}/>
           <Route path='/itemDetail/:itemId' exact={true} render={this.renderItemDetails}/>
+          <Route path='/LandingPage' exact={true} render={this.renderLandingPage}/>
 
         </div>
       </body>
