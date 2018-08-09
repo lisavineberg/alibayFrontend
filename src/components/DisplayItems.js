@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Link, withRouter } from 'react-router-dom';
 import Item from './Item.js';
-import album0 from '../images/album0.png';
-import album1 from '../images/album1.png';
-import album2 from '../images/album2.png';
-import album3 from '../images/album3.png';
-import album4 from '../images/album4.png';
-import album5 from '../images/album5.png';
-import album6 from '../images/album6.png';
-import album7 from '../images/album7.png';
+import album0 from '../images/book1.JPG';
+import album1 from '../images/book2.JPG';
+import album2 from '../images/book3.JPG';
+import album3 from '../images/book4.JPG';
+import album4 from '../images/book5.JPG';
+import album5 from '../images/book6.JPG';
+import album6 from '../images/book7.JPG';
+import album7 from '../images/book8.JPG';
+import album8 from '../images/book9.JPG';
 
 
 
@@ -20,7 +21,7 @@ function getPicIndex(i, maxNumber){
 }
 
 let pictures = [album0,
-album1, album2, album3, album4, album5, album6, album7]
+album1, album2, album3, album4, album5, album6, album7, album8]
 
 class DisplayItemsBasic extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class DisplayItemsBasic extends Component {
    
 
     displayItems() {
+        console.log(this.props.items)
       return  this.props.items.map((item, index) => {
           let newIndex = getPicIndex(index, pictures.length)
           let bgImg = pictures[newIndex]

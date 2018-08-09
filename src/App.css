@@ -18,12 +18,12 @@ body {
   position: fixed;
   top: 0%;
   left: 0%;
-  background-image: url('./images/homeButton.png');
+  /* background-image: url('./images/homeButton.png'); */
   height: 173px;
   width: 160 px;
 
 }
-
+/* 
 .homepageButton {
   background-color: transparent;
   background-size: cover;
@@ -31,7 +31,7 @@ body {
   width: 160 px;
   border: none;
 
-}
+} */
 
 button {
   font-size: 16px;
@@ -50,6 +50,7 @@ button {
   /* padding: 100px; */
   margin: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   
 }
@@ -91,14 +92,14 @@ a {
   position: fixed;
   top: 20%;
   left: 50%;
-  list-style-image: url('./images/listIcon.png')
+  /* list-style-image: url('./images/listIcon.png') */
 }
 
 .soldHistory {
   position: fixed;
   top: 70%;
   left: 50%;
-  list-style-image: url('./images/listIcon.png')
+  /* list-style-image: url('./images/listIcon.png') */
 }
 
 .navbarcolor{
