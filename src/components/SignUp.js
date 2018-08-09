@@ -36,7 +36,8 @@ class SignUpBasic extends Component{
             )
         }).then(response => response.text())
         .then(response => {
-            if (response === 'password too short'){
+            // response must be parsed since we stringified it when we sent it back.
+            if (JSON.parse(response) === 'password too short'){
                 this.setState({ signupFailed: true})
             } else {
                 let parsedResponse = JSON.parse(response)
