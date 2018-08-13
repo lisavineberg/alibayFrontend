@@ -116,3 +116,100 @@ footer.page-footer{
 .footer-top {
   height: 40px !important;
 }
+
+.itemcontainer {
+  width: 50%;
+}
+
+.itemimage {
+  height: 300px;
+}
+
+.itemli {
+  list-style-type:none;
+}
+
+.onhover:hover {
+  text-decoration: underline;
+  color: white !important;
+}
+
+.cardspacing {
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 0px;
+  padding-left: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.createlistingcard {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 50%;
+}
+
+.itemsforsalecard {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto ;
+  margin-left: auto ;
+  width: 40%;
+}
+
+.signupcard{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto ;
+  margin-left: auto ;
+  width: 60%;
+}
+
+.itemdetailcard{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: auto ;
+  margin-left: auto ;
+  width: 40%;
+}
+
+.blacklink{
+  color:black !important;
+}
+
+.blacklink:hover{
+  text-decoration: underline;
+}
+
+.greenbutton{
+  border-radius: 10px !important;
+}
+
+.greenbutton:hover{
+  color:white !important;
+  background-color: green !important;
+  border-color: green !important;
+}
+
+.buttontogrey:hover{
+  color:white !important;
+  background-color: grey !important;
+}
+
+.textspacing{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: auto ;
+    margin-left: auto ;
+}
+
+.singupspacing{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 3px ;
+  margin-left: 20px ;
+}

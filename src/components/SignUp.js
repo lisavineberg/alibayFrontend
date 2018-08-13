@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Link, withRouter } from 'react-router-dom';
 import Navbar from './Navbar.js';
 import Footer from './Footer.js';
+import '../App.css';
 
 class SignUpBasic extends Component{
     constructor(){
@@ -67,44 +68,47 @@ class SignUpBasic extends Component{
         return(
             <div>
             <Navbar/>
-            <h2>Ready to Sign Up?</h2>
-            <h3>please enter a password with a minimum of 5 characters</h3>
-            <form onSubmit={this.handleUsernameSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="username"
-                    value={this.state.inputusername}
-                    onChange={this.handleUsernameChange}>
-                </input>
-                <input 
-                    type="password" 
-                    placeholder="password"
-                    value={this.state.inputpassword}
-                    onChange={this.handlePasswordChange}>
-                </input>
-                <input 
-                    type="password" 
-                    placeholder="confirm password"
-                    value={this.state.inputconfirmedpassword}
-                    onChange={this.handleConfirmedPasswordChange}>
-                </input>
-
-                <input 
-                    type="submit">
-                </input>
-            </form>
-            <Link to="/login">
-                <button>
-                Back
-                </button>
-            </Link>
-            <div>
+            <div class="card signupcard">
+                <div class="card-body">
+                    <h2>Ready to Sign Up?</h2>
+                    <h3>please enter a password with a minimum of 5 characters</h3>
+                    <form className="signupspacing" onSubmit={this.handleUsernameSubmit}>
+                        <input 
+                            className="signupspacing"
+                            type="text" 
+                            placeholder="username"
+                            value={this.state.inputusername}
+                            onChange={this.handleUsernameChange}>
+                        </input>
+                        <input 
+                            className="signupspacing"
+                            type="password" 
+                            placeholder="password"
+                            value={this.state.inputpassword}
+                            onChange={this.handlePasswordChange}>
+                        </input>
+                        <input 
+                            className="signupspacing"
+                            type="password" 
+                            placeholder="confirm password"
+                            value={this.state.inputconfirmedpassword}
+                            onChange={this.handleConfirmedPasswordChange}>
+                        </input>
+                        <input className="signupspacing" type="submit">
+                        </input>
+                    </form>
+                    <Link to="/login">
+                        <button>Back</button>
+                    </Link>
+                <div>
                 {(this.state.signupFailed) ? <div>Sign up failed, password or username too short</div> : null}
-                </div>
-            <Footer/>
             </div>
-        )
-    }
+            </div>
+            </div>
+        <Footer/>
+    </div>
+    )
+}
 }
 
 let SignUp = withRouter(SignUpBasic)

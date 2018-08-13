@@ -17,7 +17,7 @@ class Navbar extends Component {
             <div>
                 
 <nav class="navbar navbar-dark bg-dark navbarcolor">
-  <a class="navbar-brand" href="#" style={logostyle}>BookBay</a>
+  <a class="navbar-brand onhover" href="#" style={logostyle}>BookBay</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,10 +25,10 @@ class Navbar extends Component {
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><Link to="/about"> About </Link></a>
+                <a class="nav-link onhover" href="#"><Link to="/about"> About </Link></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"> <Link to="/login"> LogIn </Link> </a>
+                <a class="nav-link onhover" href="#"> <Link to="/login"> LogIn </Link> </a>
             </li>
         </ul>
     </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, withRouter } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import DisplayItems from './DisplayItems.js'
 import NavbarHomepage from './NavbarHomepage.js';
 import Footer from './Footer.js';
@@ -83,37 +83,27 @@ class BuyHomepageBasic extends Component {
 
     render() {
         return (
-            //Browser router goes in app.js
-            <div>
-                <NavbarHomepage/>
-                {/* <div className='linkToHomepage'>
-                    <Link to='/Homepage'><button className='homepageButton'>_________________</button></Link>
-                </div> */}
+        <div>
+        <NavbarHomepage/>
+            <div class="card itemsforsalecard">
+                <div class="card-body">
                 <button onClick={this.displayAllItemsForSale}>See all items for sale</button>
-
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        What are you looking for today?
-                <input type='text' value={this.inputSearch} onChange={this.handleChange} />
-                        <input type='submit' />
-                    </form>
-                </div>
-                <div>
-                    {
-                        (this.state.noItemsForSale) ?
-                        <div>No items for sale</div> :
-                        null
-                    }
+                    <div>
+                        <form className="textspacing" onSubmit={this.handleSubmit}>
+                            What are you looking for today?
+                            <input className="textspacing" type='text' value={this.inputSearch} onChange={this.handleChange} />
+                            <input type='submit' />
+                        </form>
                     </div>
-                {/* this route applies to seeing all items for sale AND to seeing the search results  */}
-                <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} items={this.state.items} />
-                <Footer/>
-
+                </div>
             </div>
+            {(this.state.noItemsForSale) ? <div>No items for sale</div> : null}
+            {/* this route applies to seeing all items for sale AND to seeing the search results  */}
+        <Route path='/BuyHomepage/displaySearchResults' render={this.displayItems} items={this.state.items} />
+        <Footer/>
+        </div>
         )
     }
-
-
 }
 
 let BuyHomepage = withRouter(BuyHomepageBasic)
